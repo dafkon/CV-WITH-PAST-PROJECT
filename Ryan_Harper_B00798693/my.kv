@@ -1,0 +1,148 @@
+WindowManager:
+    Loginwindow:
+    Signupwindow:
+    Homewindow:
+    Chatnotwindow:
+    Settingswindow:
+
+<Loginwindow>
+    canvas.before:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: 'test2.jpg'
+    name: "Login"
+    Image:
+        source: 'image\logog.png'
+        size_hint: 0.4,0.4
+        pos_hint: {"x":0.32, "top":1}
+    FloatLayout:
+        
+        Label:
+            text:"Username: "
+            font_size: 20
+            pos_hint: {"x":0.1, "top":0.7}
+            size_hint: 0.35, 0.15
+
+        TextInput:
+            id:Username
+            multiline: False
+            font_size: 15
+            pos_hint: {"x":0.45, "top":0.65}
+            size_hint: 0.4, 0.05
+
+        Label:
+            text:"Password: "
+            font_size: 20
+            pos_hint: {"x":0.1, "top":0.6}
+            size_hint: 0.35, 0.15
+
+        TextInput:
+            id:Password
+            multiline: False
+            password: True
+            font_size: 15
+            pos_hint: {"x":0.45, "top":0.55}
+            size_hint: 0.4, 0.05
+        Button:
+            background_color: (252/255.0, 157/255.0, 249/255.0)
+            font_size: 20
+            pos_hint: {"x":0.3, "y":0.3}
+            size_hint: 0.4, 0.05
+            text:"Login"
+            on_release: 
+                app.root.current = "Home" if Username.text =="dafkon" and Password.text == "password" else "Login"
+        Button:
+            background_color: (252/255.0, 157/255.0, 249/255.0)
+            font_size: 20
+            pos_hint: {"x":0.3, "y":0.25}
+            size_hint: 0.4, 0.05
+            text:"Sign up"
+            on_release: app.root.current = "Sign-Up"
+<Signupwindow>
+    name: "Sign-Up"
+    canvas.before:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: 'test2.jpg'
+    Image:
+        source: 'image\logog.png'
+        size_hint: 0.4,0.4
+        pos_hint: {"x":0.32, "top":1}
+    FloatLayout:
+        
+        Label:
+            text:"Username: "
+            font_size: 20
+            pos_hint: {"x":0.1, "top":0.7}
+            size_hint: 0.35, 0.15
+
+        TextInput:
+            id:Username
+            multiline: False
+            font_size: 15
+            pos_hint: {"x":0.45, "top":0.65}
+            size_hint: 0.4, 0.05
+
+        Label:
+            text:"Email: "
+            font_size: 20
+            pos_hint: {"x":0.1, "top":0.6}
+            size_hint: 0.35, 0.15
+
+        TextInput:
+            id:email
+            multiline: False
+            password: True
+            font_size: 15
+            pos_hint: {"x":0.45, "top":0.55}
+            size_hint: 0.4, 0.05
+
+        Label:
+            text:"Password: "
+            font_size: 20
+            pos_hint: {"x":0.1, "top":0.5}
+            size_hint: 0.35, 0.15
+
+        TextInput:
+            id:Password
+            multiline: False
+            password: True
+            font_size: 15
+            pos_hint: {"x":0.45, "top":0.45}
+            size_hint: 0.4, 0.05
+        Button:
+            background_color: (252/255.0, 157/255.0, 249/255.0)
+            font_size: 20
+            pos_hint: {"x":0.3, "y":0.3}
+            size_hint: 0.4, 0.05
+            text:"Sign-up"
+            on_release: 
+                app.root.current = "Login" 
+        Button:
+            background_color: (252/255.0, 157/255.0, 249/255.0)
+            font_size: 20
+            pos_hint: {"x":0.3, "y":0.25}
+            size_hint: 0.4, 0.05
+            text:"Cancel"
+            on_release: app.root.current = "Login"
+
+<Homewindow>
+    name: "Home"
+    canvas.before:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: 'test2.jpg'
+    BoxLayout: 
+        orientation: 'vertical'
+        background_color: (252/255.0, 157/255.0, 249/255.0)
+        size_hint: 0.4, 0.05
+
+
+<Chatnotwindow>
+    name: "Chatbot"
+    
+<Settingswindow>
+    name: "Settings"
