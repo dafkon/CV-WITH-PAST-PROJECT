@@ -1,0 +1,294 @@
+WindowManager:
+    Loginwindow:
+    Signupwindow:
+    ForgotPassswordWindow:
+    Homewindow:
+    Chatnotwindow:
+    Settingswindow:
+
+<Loginwindow>
+    name: "Login"
+    canvas.before:
+        Color:
+            rgba: 207/255.0, 137/255.0, 202/255.0, 255/255.0
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    Image:
+        source: 'image\image.png'
+        size_hint: 0.4,0.4
+        pos_hint: {"x":0.31, "top":1}
+    FloatLayout:
+        TextInput:
+            id:email
+            foreground_color: [0,0,0,1]
+            hint_text_color: [1,1,1,1]
+            background_color: [207/255.0, 137/255.0, 202/255.0, 255/255.0]
+            hint_text: "Email:"
+            multiline: False
+            font_size: 15
+            pos_hint: {"x":0.20, "top":0.65}
+            size_hint: 0.6, 0.05
+
+        TextInput:
+            id:password
+            hint_text_color: [1,1,1,1]
+            text_hint_color: [0,0,0,1]
+            foreground_color: [0,0,0,1]
+            background_color: [207/255.0, 137/255.0, 202/255.0, 255/255.0]
+            hint_text: "Password:"
+            multiline: False
+            password: True
+            font_size: 15
+            pos_hint: {"x":0.20, "top":0.55}
+            size_hint: 0.6, 0.05
+            canvas.before:
+
+        RoundedButton:
+            font_size: 20
+            pos_hint: {"x":0.3, "y":0.35}
+            size_hint: 0.4, 0.05
+            text:"Login"
+            on_release:
+                app.login(email.text, password.text)
+                email.text = ''
+                password.text = ''
+
+        RoundedButton:
+            font_size: 12
+            background_color: 207/255.0, 137/255.0, 202/255.0, 255/255.0
+            underline: True
+            pos_hint: {"x":0.25, "y":0.28}
+            size_hint: 0.5, 0.05
+            text:"No Account? Why not sign up?"
+            on_release:
+                app.root.current = "Sign-Up"
+                email.text = ''
+                password.text = ''
+        RoundedButton:
+            font_size: 12
+            background_color: 207/255.0, 137/255.0, 202/255.0, 255/255.0
+            pos_hint: {"x":0.5, "y":0.47}
+            underline: True
+            size_hint: 0.3, 0.03
+            text:"Forgot Password"
+            on_release:
+                app.root.current = "ForgotPassword"
+                email.text = ''
+                password.text = ''
+
+<Signupwindow>
+    name: "Sign-Up"
+    canvas.before:
+        Color:
+            rgba: 207/255.0, 137/255.0, 202/255.0, 255/255.0
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    Image:
+        source: 'image\image.png'
+        size_hint: 0.4,0.4
+        pos_hint: {"x":0.32, "top":1}
+    FloatLayout:
+
+        Label:
+            text:"Email: "
+            font_size: 20
+            pos_hint: {"x":0.1, "top":0.6}
+            size_hint: 0.35, 0.15
+
+
+        TextInput:
+            id:email
+            multiline: False
+            font_size: 15
+            pos_hint: {"x":0.45, "top":0.55}
+            size_hint: 0.4, 0.05
+
+        Label:
+            text:"Password: "
+            font_size: 20
+            pos_hint: {"x":0.1, "top":0.5}
+            size_hint: 0.35, 0.15
+
+        TextInput:
+            id:password
+            multiline: False
+            password: True
+            font_size: 15
+            pos_hint: {"x":0.45, "top":0.45}
+            size_hint: 0.4, 0.05
+        RoundedButton:
+            font_size: 20
+            pos_hint: {"x":0.3, "y":0.3}
+            size_hint: 0.4, 0.05
+            text:"Sign-up"
+            on_release:
+                app.signup(email.text, password.text)
+                email.text = ''
+                password.text = ''
+
+        RoundedButton:
+            font_size: 20
+            pos_hint: {"x":0.3, "y":0.25}
+            size_hint: 0.4, 0.05
+            text:"Cancel"
+            on_release:
+                app.root.current = "Login"
+                email.text = ''
+                password.text = ''
+
+<ForgotPassswordWindow>
+    name: "ForgotPassword"
+    canvas.before:
+        Color:
+            rgba: 207/255.0, 137/255.0, 202/255.0, 255/255.0
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    BoxLayout:
+        orientation: 'vertical'
+        background_color: (252/255.0, 157/255.0, 249/255.0)
+        size_hint: 0.4, 0.05
+    Image:
+        source: 'image\image.png'
+        size_hint: 0.4,0.4
+        pos_hint: {"x":0.32, "top":1}
+    FloatLayout:
+        Label:
+            text:"Email: "
+            font_size: 20
+            pos_hint: {"x":0.1, "top":0.6}
+            size_hint: 0.35, 0.15
+
+        TextInput:
+            id:email
+            multiline: False
+            font_size: 15
+            pos_hint: {"x":0.45, "top":0.55}
+            size_hint: 0.4, 0.05
+
+        RoundedButton:
+            font_size: 15
+            pos_hint: {"x":0.3, "y":0.3}
+            size_hint: 0.4, 0.05
+            text:"Change Password"
+            on_release:
+                app.forgotpassword(email.text)
+
+        RoundedButton:
+            font_size: 20
+            pos_hint: {"x":0.3, "y":0.25}
+            size_hint: 0.4, 0.05
+            text:"Cancel"
+            on_release: app.root.current = "Login"
+
+<Homewindow>
+    name: "Home"
+    canvas.before:
+        Color:
+            rgba: 207/255.0, 137/255.0, 202/255.0, 255/255.0
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    BoxLayout:
+        orientation: 'vertical'
+        background_color: 252/255.0, 157/255.0, 249/255.0
+        size_hint: 0.4, 0.05
+    MDBoxLayout:
+        orientation: 'vertical'
+
+        #bottom nav used to navigate through pages
+        MDBottomNavigation:
+            #1st item
+            MDBottomNavigationItem:
+                name: 'Home Screen'
+                text:"Home"
+                icon: 'image\home.png'
+                Image:
+                    allow_stretch: True
+                    size_hint: None, None
+                    size: root.size
+                FloatLayout:
+                    canvas.before:
+                        Color:
+                            rgba: 207/255.0, 137/255.0, 202/255.0, 255/255.0
+                        Rectangle:
+                            pos: self.pos
+                            size: self.size
+                    MDLabel:
+                        text:"Home Screen"
+                        font_size: 20
+                        pos_hint: {"x":0.1, "top":0.7}
+                        size_hint: 0.35, 0.15
+
+            #2nd item
+            MDBottomNavigationItem:
+                name: 'Chatbot Screen'
+                text: "Buddy AI"
+                icon: 'image\image.png'
+
+                Image:
+                    allow_stretch: True
+                    size_hint: None, None
+                    size: root.size
+
+                FloatLayout:
+                    canvas.before:
+                        Color:
+                            rgba: 207/255.0, 137/255.0, 202/255.0, 255/255.0
+                        Rectangle:
+                            pos: self.pos
+                            size: self.size
+                    MDLabel:
+                        text:"Chatbot Screen"
+                        font_size: 20
+                        pos_hint: {"x":0.1, "top":0.7}
+                        size_hint: 0.35, 0.15
+
+            #3rd item
+            MDBottomNavigationItem:
+                name: 'Settings'
+                text: "Settings"
+                icon: 'image\gear.png'
+
+                Image:
+                    allow_stretch: True
+                    size_hint: None, None
+                    size: root.size
+
+                FloatLayout:
+                    canvas.before:
+                        Color:
+                            rgba: 207/255.0, 137/255.0, 202/255.0, 255/255.0
+                        Rectangle:
+                            pos: self.pos
+                            size: self.size
+
+                    ScrollView:
+                        MDList:
+                            OneLineListItem:
+                                id: Sign-Out
+                                text: "Sign Out"
+                                on_release:
+                                    app.root.current = "Login"
+                            OneLineListItem:
+                                id: delete
+                                text: "Get Current Account Details"
+                                on_release:
+                                    app.logindetails()
+
+
+
+<RoundedButton@Button>
+    background_color: (0,0,0,0)
+    background_normal: ''
+    canvas.before:
+        Color:
+            rgba: 150/255.0, 100/255.0, 150/255.0, 255/255.0
+        RoundedRectangle:
+            pos: self.pos
+            size: self.size
+            radius: [10]
+<Settingswindow>
+    name: "Settings"
