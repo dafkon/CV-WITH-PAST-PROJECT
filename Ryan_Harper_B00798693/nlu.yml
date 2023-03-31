@@ -89,3 +89,193 @@ nlu:
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
+
+- intent: thanks
+  examples: |
+    - Thanks
+    - Thank you
+    - Thank you very much
+    - Appreciate it
+    - Many thanks
+    - Thanks a lot
+
+- intent: joke
+  examples: |
+    - Tell me a joke
+    - Can you tell me a funny joke?
+    - Do you know any jokes?
+    - Make me laugh
+    - Say something funny
+    - im feeling really down in the dumps could you make me laugh
+    - could really do with a pick me up
+    
+- intent: thanks_response
+  examples: |
+    - You're welcome
+    - No problem
+    - My pleasure
+    - Anytime
+    - Glad to help
+    - Anytime 
+    - Dont sweat it
+    - your alright
+    - dont worry
+    - don't worry about it
+
+- intent: default
+  examples: |
+    - I don't understand
+    - Can you rephrase that?
+    - What do you mean?
+    - Could you explain that?
+    - Sorry, I don't get it
+    - Can you say that again?
+    - Pardon?
+    - I'm sorry, I didn't understand that.
+
+- intent: Mental_Health_Update
+  examples: |
+    - Ive been really struggling this past while
+    - i always feels down
+    - constantly drained
+    - mentally fatigued
+    - I'm feeling overwhelmed lately
+    - My anxiety has been acting up
+    - I'm experiencing a lot of stress
+    - I'm struggling with my emotions
+    - I feel like I can't handle things right now
+    - finding it hard to focus and concentrate
+    - I'm feeling really anxious and worried
+    - I'm not sleeping well and it's affecting my mood
+    - feeling really low and sad
+    - I'm experiencing a lot of negative thoughts
+    - I'm feeling really burnt out
+    - having trouble coping with things
+    - I'm experiencing a lot of mood swings
+    - I feel like I'm on an emotional rollercoaster
+    - feeling really lonely and isolated
+    - I'm struggling to find motivation
+    - I'm feeling really irritable and snappy
+    - having trouble managing my stress levels
+    - I'm feeling really overwhelmed and helpless
+
+- intent: Cause
+  examples: |
+    - Family problems
+    - My physical and mental health
+    - I was in an abusive relationship
+    - I was abused when i was younger
+    - Being antisocial and afraid of connecting with people
+    - I'm going through a lot of changes in my life
+    - I've experienced a traumatic event
+    - I'm dealing with a lot of stress at work/school
+    - I'm feeling overwhelmed by responsibilities
+    - Trouble with a significant relationship
+    - I've experienced a recent loss or bereavement
+    - I've been struggling with addiction or substance abuse
+    - I'm dealing with financial difficulties
+    - Experiencing discrimination or prejudice
+    - I'm feeling pressure to meet societal expectations
+    - I'm struggling with a chronic illness
+    - I've experienced a major life change like moving or divorce
+    - I'm dealing with a lot of unresolved emotions from my past
+    - Feeling a lot of pressure from my family or cultural background
+    - I'm experiencing identity issues or feeling like I don't fit in
+    - Struggling with self-esteem or body image issues
+    - I'm dealing with a lot of uncertainty or insecurity in my life
+    - I've been experiencing a lot of negative self-talk or criticism
+
+- intent: sought_Help
+  examples: |
+    - No i've not sought out any help for this
+    - This is the first time ive talked about this
+    - yea
+    - no
+    - yes
+    
+- intent: Reason_for_not_seeking_Help
+  examples: |
+    - Feeling weak that i have to ask someone or something for help
+    - Social expectations
+    - Not wanting anyone to worry
+    - Feeling ashamed that I can't handle this on my own
+    - Fear of being judged or misunderstood
+    - Worried about the cost of seeking professional help
+    - I don't know where to start looking for help
+    - I don't want to burden anyone with my problems
+    - I don't think anyone can help me with this
+    - Feeling like I should be able to deal with this myself
+    - Concerned about confidentiality or privacy
+    - Feeling like my problem isn't serious enough to seek help for
+    - I'm afraid of the potential consequences of seeking help
+    - I'm afraid of what people might think of me if I seek help
+    - I don't want to appear weak or vulnerable
+    - I've tried seeking help before and it didn't work out
+    - I'm not sure if what I'm going through is serious enough to seek help
+    - I'm worried about the time commitment involved in seeking help
+    - I feel like I should be able to handle this on my own
+    - I'm concerned about the stigma associated with mental health issues
+    - I don't have access to resources for seeking help
+    - I'm not sure if I can afford to seek help
+
+- intent: Why_They_Sought_help_Now
+  examples: |
+    - I feel more confident telling a bot than telling a person
+    - A chatbot is less likely to judge me
+    - I feel like i'll be listened to more
+    - The hope of finding a quicker solution faster
+    - I'm afraid of talking to an actual person
+    - I've tried dealing with this on my own for a while, but it's not working
+    - I don't have anyone else to talk to about this
+    - I'm hoping to get a different perspective on my situation
+    - I'm tired of feeling stuck and want to make some progress
+    - I'm worried that things will get worse if I don't seek help now
+    - I'm open to trying different approaches to solve my problem
+    - I want to learn coping skills to better manage my situation
+    - I feel like I've hit a breaking point and can't handle this on my own anymore
+    - I'm ready to take action and make positive changes in my life
+    - I want to explore different treatment options to find what works for me
+
+- intent: Chatbot_expectation
+  examples: |
+    - I hope I can gain more confidence to go talk to a actual person
+    - To gain more knowledge on how to cope with my current situation
+    - To get this burden off my chest
+    - I'm looking for support and guidance to help me through a difficult time
+    - I hope to gain a better understanding of my thoughts and emotions
+    - I want to learn new coping strategies to help me deal with my situation
+    - I'm hoping to find a safe space to express myself without fear of judgment
+    - I'm looking for someone to listen to me and validate my feelings
+    - I'm hoping to build a connection with the chatbot and feel less alone
+    - I'm looking for resources and tools to help me manage my situation
+    - I hope to gain some clarity and perspective on my situation
+    - I want to build my confidence and self-esteem
+
+- intent: Mental_health_condition
+  examples: |
+    - Depression
+    - Anxiety 
+    - Social anxiety disorder
+    - Mood Swings
+    - Body dysmorphic disorder
+    - BDD
+    - Post-traumatic stress disorder
+    - PTSD
+    - Obsessive-compulsive disorder
+    - OCD
+    - Attention-deficit/hyperactivity disorder
+    - ADHD
+    - Borderline personality disorder
+    - BPD
+    - Eating disorders
+    - addiction
+    - Generalized anxiety disorder
+    - Panic disorder
+    - Seasonal affective disorder
+    - SAD
+    - None of the above
+    - No known diagnoses
+    - No idea
+
+- intent:
+  examples: |
