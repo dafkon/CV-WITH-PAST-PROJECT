@@ -1,64 +1,96 @@
-MDBoxLayout:
-    orientation: 'vertical'
-    #Top of application bar two clickable items
-    MDTopAppBar:
-        background_color: (252/255.0, 157/255.0, 249/255.0)
-        title: "BuddyAI"
-        left_action_items:[["menu"]]
-        right_action_items: [["image\logohead.png"]]
-    #bottom nav used to navigate through pages
-    MDBottomNavigation:
-    #1st item
-        MDBottomNavigationItem:
-            name: 'Home Screen'
-            text:"Home"
-            icon: 'image\home.png'
-            Image:
-                source: 'test2.jpg'
-                allow_stretch: True
-                size_hint: None, None
-                size: root.size
-            FloatLayout:
-                MDLabel:
-                    text:"Home Screen"
-                    font_size: 20
-                    pos_hint: {"x":0.1, "top":0.7}
-                    size_hint: 0.35, 0.15
+WindowManager:
+    Homewindow:
+<Homewindow>
+    name: "Homewindow"
+    canvas.before:
+        Color:
+            rgba: 207/255.0, 137/255.0, 202/255.0, 255/255.0
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    BoxLayout:
+        orientation: 'vertical'
+        background_color: 252/255.0, 157/255.0, 249/255.0
+        size_hint: 0.4, 0.05
+    MDBoxLayout:
+        orientation: 'vertical'
 
-    #2nd item
-        MDBottomNavigationItem:
-            name: 'Chatbot Screen'
-            text: "Buddy AI"
-            icon: 'image\logog.png'
-            
-            Image:
-                source: 'test2.jpg'
-                allow_stretch: True
-                size_hint: None, None
-                size: root.size
-                
-            FloatLayout:
-                MDLabel:
-                    text:"Chatbot Screen"
-                    font_size: 20
-                    pos_hint: {"x":0.1, "top":0.7}
-                    size_hint: 0.35, 0.15
-        
-        #3rd item
-        MDBottomNavigationItem:
-            name: 'Settings'
-            text: "Settings"
-            icon: 'image\gear.png'
-            Image:
-                source: 'test2.jpg'
-                allow_stretch: True
-                size_hint: None, None
-                size: root.size
-            FloatLayout:
-                MDLabel:
-                    text:"Settings Screen"
-                    font_size: 20
-                    pos_hint: {"x":0.1, "top":0.7}
-                    size_hint: 0.35, 0.15
+        #bottom nav used to navigate through pages
+        MDBottomNavigation:
+            #1st item
+            MDBottomNavigationItem:
+                name: 'Home Screen'
+                text:"Home"
+                icon: 'image\home.png'
+                Image:
+                    allow_stretch: True
+                    size_hint: None, None
+                    size: root.size
+                FloatLayout:
+                    canvas.before:
+                        Color:
+                            rgba: 207/255.0, 137/255.0, 202/255.0, 255/255.0
+                        Rectangle:
+                            pos: self.pos
+                            size: self.size
+                    MDLabel:
+                        text:"Home Screen"
+                        font_size: 20
+                        pos_hint: {"x":0.1, "top":0.7}
+                        size_hint: 0.35, 0.15
 
-        
+            #2nd item
+            MDBottomNavigationItem:
+                name: 'Chatbot Screen'
+                text: "Buddy AI"
+                icon: 'image\image.png'
+
+                Image:
+                    allow_stretch: True
+                    size_hint: None, None
+                    size: root.size
+
+                FloatLayout:
+                    canvas.before:
+                        Color:
+                            rgba: 207/255.0, 137/255.0, 202/255.0, 255/255.0
+                        Rectangle:
+                            pos: self.pos
+                            size: self.size
+
+                    Label:
+                        text: app.message_history
+
+                    TextInput:
+                        id: user_input
+                        hint_text_color: [1,1,1,1]
+                        text_hint_color: [0,0,0,1]
+                        foreground_color: [0,0,0,1]
+                        background_color: [207/255.0, 137/255.0, 202/255.0, 255/255.0]
+                        hint_text: "Lets chat!!: "
+                        multiline: False
+                        font_size: 15
+                        pos_hint: {"x":0.02, "top":0.062}
+                        size_hint: 0.87, 0.055
+                        canvas.before:
+
+                    RoundedSubmitButton:
+                        font_size: 20
+                        text: ">"
+                        pos_hint: {"x":0.9, "top":0.06}
+                        size_hint: 0.07, 0.05
+                        radius: [10]
+                        on_release:
+                            app.user_message(user_input.text)
+                            user_input.text = ''
+
+
+<RoundedSubmitButton@Button>
+    background_color: (0,0,0,0)
+    canvas.before:
+        Color:
+            rgba: 150/255.0, 100/255.0, 150/255.0, 255/255.0
+        RoundedRectangle:
+            pos: self.pos
+            size: self.size
+            radius: [30]
