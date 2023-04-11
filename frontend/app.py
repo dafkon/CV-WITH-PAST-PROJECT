@@ -1,6 +1,4 @@
 # Import for pyrebase, pyrebase helps to connect the program to firebase services
-from tkinter import Button
-
 import pyrebase
 # import needed to work with json data
 import json
@@ -9,8 +7,6 @@ import requests
 from kivy.properties import StringProperty
 # sets components from Kivy so that they can be used in kv file and within py file
 from kivy.uix.label import Label
-from kivy.uix.widget import Widget
-from kivy.uix.floatlayout import FloatLayout
 from kivy.uix.popup import Popup
 from kivy.uix.screenmanager import ScreenManager, Screen
 from kivy.core.window import Window
@@ -56,9 +52,23 @@ class Signupwindow(Screen):
 
 # holds Home screen window
 class Homewindow(Screen):
-    message_history = StringProperty()
-    pass
+    # Help section function to display
+    def helpsection(self):
+        for helplines in db.child("Helpline").get():
+            name = helplines.val().get("A")
+            desc = helplines.val().get("B")
+            contact = helplines.val().get("C")
+            name = f'{name}'
+            desc = f'{desc}'
+            contact = f'{contact}'
+            title = Label(text="\n" + name, text_size=(360, None), font_size=30, bold=True, halign='center', )
+            desc = Label(text="\n" + desc, text_size=(360, None), font_size=15, padding=(20, 0))
+            contact = Label(text="\n" + "Contact Number: " + contact, text_size=(360, 50), padding=(20, 0))
+            self.ids.helpscreen.add_widget(title)
+            self.ids.helpscreen.add_widget(desc)
+            self.ids.helpscreen.add_widget(contact)
 
+    pass
 
 # holds Forgot password window
 class ForgotPassswordWindow(Screen):
@@ -73,7 +83,9 @@ class WindowManager(ScreenManager):
 # base class
 class Buddy(MDApp):
     # Initialize and return root widget
-    message_history = StringProperty()
+    message_user = StringProperty()
+    message_response = StringProperty()
+    empty = {}
     def build(self):
         # Global so everything can access kv file mainly just the login and sign up
         global kv
@@ -126,6 +138,9 @@ class Buddy(MDApp):
                           content=Label(text='Email is already taken or \n no data has been entered', halign='center'))
             popup.open()
 
+    def signout(self):
+        auth.current_user = None
+
     def deleteUser(self):
         # takes the current user logged in at the moment and deletes their account
         sis = auth.current_user
@@ -138,15 +153,27 @@ class Buddy(MDApp):
         auth.update_profile(sis['idToken'], displayname, picture)
 
     def user_message(self, user_input):
+        # Stores user message
         message = user_input
+        # Stores chatbot response
         response = self.response(message)
-        self.message_history += f'You: {message}\nChatbot: {response}\n'
+        # Store the user message to then be displayed in the code in the .kv file
+        self.message_user = f'You: {message}'
+        # Store the chatbot response message to then be displayed in the code in the .kv file
+        self.message_response = f'Buddy: {response}'
 
     def response(self, message):
+        # This is used to specify the type of data being sent to the HTTP request
         headers = {'content-type': 'application/json'}
+        # Creates a json formatted string, it has both key values of sender and user
+        # and message with the value of the message variable
         data = json.dumps({'sender': 'user', 'message': message})
+        # Sends a http post request to the RASAa chatbot URL using the previous created
+        # headers and data it then assigns that to the response
         response = requests.post('http://localhost:5005/webhooks/rest/webhook', headers=headers, data=data)
+        # Uses json module to parse the response text, it then assigns it to response data to be returned
         response_data = json.loads(response.text)
+        # Returns response_data with the first response in response data
         return response_data[0]['text']
 
 

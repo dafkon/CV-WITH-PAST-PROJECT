@@ -1,9 +1,10 @@
+#:import Label kivy.uix.label.Label
+
 WindowManager:
     Loginwindow:
     Signupwindow:
     ForgotPassswordWindow:
     Homewindow:
-
 <Loginwindow>
     name: "Login"
     canvas.before:
@@ -213,11 +214,19 @@ WindowManager:
                         Rectangle:
                             pos: self.pos
                             size: self.size
-                    MDLabel:
-                        text:"Home Screen"
+                    ScrollView:
+                        MDList:
+                            id: helpscreen
+                    Button:
                         font_size: 20
-                        pos_hint: {"x":0.1, "top":0.7}
-                        size_hint: 0.35, 0.15
+                        text: "Lets Chat!!!"
+                        background_color: 150/255.0, 100/255.0, 150/255.0, 255/255.0
+                        pos_hint: {"x":0.3, "y":0.5}
+                        size_hint: 0.4, 0.09
+                        on_release:
+                            app.root.get_screen('Homewindow').helpsection()
+                            self.opacity = 0
+                            self.disabled = True
 
             #2nd item
             MDBottomNavigationItem:
@@ -237,9 +246,24 @@ WindowManager:
                         Rectangle:
                             pos: self.pos
                             size: self.size
+                    ScrollView:
+                        MDList:
+                            id: listlist
 
-                    Label:
-                        text: app.message_history
+                    Button:
+                        id: letschat
+                        font_size: 20
+                        text: "Lets Chat!!!"
+                        background_color: 150/255.0, 100/255.0, 150/255.0, 255/255.0
+                        pos_hint: {"x":0.3, "y":0.5}
+                        size_hint: 0.4, 0.09
+                        on_release:
+                            app.user_message("NickNameSet")
+                            listlist.add_widget(Label(text = app.message_response))
+                            self.opacity = 0
+                            self.disabled = True
+                            user_input.disabled = False
+                            submitinput.disabled = False
 
                     TextInput:
                         id: user_input
@@ -249,20 +273,26 @@ WindowManager:
                         background_color: [207/255.0, 137/255.0, 202/255.0, 255/255.0]
                         hint_text: "Lets chat!!: "
                         multiline: False
+                        disabled: True
                         font_size: 15
                         pos_hint: {"x":0.02, "top":0.062}
                         size_hint: 0.87, 0.055
                         canvas.before:
 
                     RoundedSubmitButton:
+                        id: submitinput
                         font_size: 20
                         text: ">"
                         pos_hint: {"x":0.9, "top":0.06}
                         size_hint: 0.07, 0.05
                         radius: [10]
+                        disabled: True
                         on_release:
                             app.user_message(user_input.text)
+                            listlist.add_widget(Label(text = app.message_user))
+                            listlist.add_widget(Label(text = app.message_response))
                             user_input.text = ''
+
 
             #3rd item
             MDBottomNavigationItem:
@@ -288,6 +318,14 @@ WindowManager:
                                 text: "Sign Out"
                                 on_release:
                                     app.root.current = "Login"
+                                    if letschat.disabled == True: listlist.clear_widgets()
+                                    letschat.opacity = 1
+                                    letschat.disabled = False
+                                    user_input.disabled = True
+                                    submitinput.disabled = True
+                                    app.signout()
+
+
                             OneLineListItem:
                                 id: delete
                                 text: "Delete Account"
