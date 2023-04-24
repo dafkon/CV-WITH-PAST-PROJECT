@@ -1,0 +1,953 @@
+version: "3.1"
+
+intents:
+  - bot_challenge
+  - mood_unhappy
+  - deny
+  - affirm
+  - goodbye
+  - greet
+  - thanks
+  - joke
+  - default
+  - Mental_Health_Update
+  - Cause
+  - sought_Help
+  - Reason_for_not_seeking_Help
+  - Why_They_Sought_help_Now
+  - Chatbot_expectation
+  - Self_harm_a
+  - Self_harm_b
+  - Self_harm_c
+  - Self_harm_d_1
+  - Self_harm_d_2
+  - Self_harm_e_1
+  - Self_harm_e_2
+  - Coping_strategies_A
+  - Coping_strategies_B
+  - Coping_strategies_C_Depression
+  - Coping_strategies_C_Stress
+  - Coping_strategies_C_Anxiety
+  - Coping_strategies_C_Body_dysmorphic
+  - Coping_strategies_C_PTSD
+  - Coping_strategies_C_PTSD_flashbacks
+  - Coping_strategies_C_ADHD
+  - Coping_strategies_C_OCD
+  - Coping_strategies_C_Eating_Disorder
+  - Coping_strategies_C_Insomnia
+  - Coping_strategies_C_Anger
+  - Coping_strategies_C_Grief
+  - Coping_strategies_C_Antisocial
+  - Coping_strategies_C_Trauma
+  - Coping_strategies_C_Abusive_relationship_Current
+  - Coping_strategies_C_Abusive_relationship_Planning
+  - Coping_strategies_C_Abusive_relationship_Left
+  - Coping_strategies_C_Phobias_Menu
+  - Coping_strategies_C_Phobias
+  - Coping_strategies_C_Phobias_1
+  - Coping_strategies_C_Phobias_2
+  - Coping_strategies_C_Phobias_3
+  - Coping_strategies_C_Phobias_4
+  - Coping_strategies_C_Phobias_5
+  - Coping_strategies_C_Addiction
+  - Coping_strategies_C_Racism
+  - Coping_strategies_C_Homophobia
+  - Coping_strategies_C_Depression_REF
+  - Coping_strategies_C_Stress_REF
+  - Coping_strategies_C_Anxiety_REF
+  - Coping_strategies_C_Body_dysmorphic_REF
+  - Coping_strategies_C_PTSD_REF
+  - Coping_strategies_C_PTSD_flashbacks_REF
+  - Coping_strategies_C_ADHD_REF
+  - Coping_strategies_C_OCD_REF
+  - Coping_strategies_C_Eating_Disorder_REF
+  - Coping_strategies_C_Insomnia_REF
+  - Coping_strategies_C_Anger_REF
+  - Coping_strategies_C_Grief_REF
+  - Coping_strategies_C_Antisocial_REF
+  - Coping_strategies_C_Trauma_REF
+  - Coping_strategies_C_Abusive_relationship_Current_REF
+  - Coping_strategies_C_Abusive_relationship_Planning_REF
+  - Coping_strategies_C_Abusive_relationship_Left_REF
+  - Coping_strategies_C_Phobias_REF
+  - Coping_strategies_C_Phobias_1_REF
+  - Coping_strategies_C_Phobias_2_REF
+  - Coping_strategies_C_Phobias_3_REF
+  - Coping_strategies_C_Phobias_4_REF
+  - Coping_strategies_C_Phobias_5_REF
+  - Coping_strategies_C_Addiction_REF
+  - Coping_strategies_C_Racism_REF
+  - Coping_strategies_C_Homophobia_REF
+  - Depression_Description
+  - Anxiety_Description
+  - Social_anxiety_disorder
+  - Mood_Swings
+  - Body_dysmorphic_disorder
+  - PTSD
+  - OCD
+  - ADHD
+  - BPD
+  - Eating_disorders
+  - addiction
+  - Generalized_anxiety_disorder
+  - Panic_disorder
+  - Seasonal_affective_disorder
+  - Abusive_relationship-----------
+  - Family_problems
+  - Stress_Description
+  - Grief
+  - Insomnia
+  - Phobias
+  - Anger_Description
+  - Trauma_Description
+  - Tokophobia
+  - Claustrophobia
+  - Mysophobia
+  - Hypochondria
+  - Atychiphobia
+  - Bipolar_Disorder
+  - Schizophrenia
+  - Suicide
+
+
+responses:
+  utter_greet:
+  - text: 'Hey there friend hows it going!!!'
+  - text: 'Heya buddy hows it going '
+
+  utter_joke:
+    - text: "a man walks into a bar, he says hello"
+    - text: "Why don't scientists trust atoms? Because they make up everything."
+    - text: "What do you call a fake noodle? An impasta."
+    - text: "I told my wife she was drawing her eyebrows too high. She looked surprised."
+    - text: "Why did the tomato turn red? Because it saw the salad dressing."
+    - text: "What did one hat say to the other? You stay here, I'll go on ahead."
+    - text: "What do you get when you cross a snowman and a shark? Frostbite."
+    - text: "Why do chicken coops only have two doors? Because if they had four, they'd be a sedan."
+    - text: "Why did the bicycle fall over? Because it was two-tired."
+    - text: "I'm reading a book on anti-gravity. It's impossible to put down."
+    - text: "What did the grape say when it got stepped on? Nothing, it just let out a little wine."
+    - text: "I told my wife she was drawing her eyebrows too high. She looked surprised."
+    - text: "Why do seagulls fly over the sea? Because if they flew over the bay, they'd be bagels."
+    - text: "I'm reading a book on the history of glue. I just can't seem to put it down."
+    - text: "Why don't eggs tell jokes? Because they'd crack each other up."
+    - text: "Why don't skeletons fight each other? They don't have the guts."
+    - text: "Why did the scarecrow win an award? Because he was outstanding in his field."
+    - text: "What do you call a can opener that doesn't work? A can't opener."
+    - text: "Why don't scientists trust atoms? Because they make up everything."
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "My Name is Buddy and AI developed to help people with mental health!"
+
+  utter_mood_unhappy:
+  - text: "I'm sorry to hear that you're feeling unhappy. Is there anything 
+          specific that's been bothering you lately that you'd like to talk about?"
+
+  utter_deny:
+    - text: "That's alright. Is there anything else on your mind that you'd like to talk about?"
+
+  utter_thanks:
+    - text: "No problem, happy to help! Is there anything else you'd like to chat about?"
+
+  utter_Mental_Health_Update:
+    - text: "I'm sorry to hear friend, Would their be any cause for this happening?"
+
+  utter_Cause:
+    - text: "That must be really difficult for you to go through, if you don't mind me asking, have you talked to
+            anyone about this or sought help for it?"
+
+  utter_sought_Help:
+    - text: "Is there any reason for this?"
+
+  utter_Reason_for_not_seeking_Help:
+    - text: "I understand that seeking help can be difficult. Is there anything in particular 
+              that made you look for help now?"
+
+  utter_Why_They_Sought_help_Now:
+    - text: "It takes courage to ask for help, and I'm here to 
+            support you as best as I possibly can :) 
+            So what expectations do you have from me friend?"
+
+  utter_Chatbot_expectation:
+    - text: "That's Great i will try my absolute best to
+            try and assist you with everything that comes our way!!! 
+            that's what a Buddy's for after all!!"
+  utter_Self_harm_a:
+    - text: "Im sorry to hear this, but pleased be assured that that you are not
+            alone in this and that are people out there for you weather that be 
+            family or friend. I am also here ready to help at anytime of the day
+            for you not matter what and so are call services like Samaritans (Num.116 123),
+            which can be found in our help section. These people are professional
+            who are their to talk to you and provide expert advice."
+  utter_Self_harm_b:
+    - text: "I know it can be hard to get help on these types of topic or scary to even
+            talk to anyone about these topic, because you dont want them to worry, or 
+            be burdened or that your scared as you think these people may not value you enough.
+            But they do. Wayyyy more than you think and would certainly welcome you telling
+            them the same way i am. However, even after this if your still not confident in talking
+            to someone may i suggest Mind Infoline, these are people who will help to provide
+            all the information and resources you need to get better, their phone number is: 0300 123 3393 (Monday to Friday, 9am to 6pm).
+            Dont feel Afraid to talk to these people or feel like a burden to them, their job and mine
+            are to help you through this no matter what!!! I do have one question if i could ask please?
+            Is there any reason you've not talk to anyone about this yet?"
+  utter_Self_harm_c:
+    - text: "I'm sorry to hear this. But their are people out there who would love nothing more
+            than for you to talk to them. In our help section those ar just come of the 
+            helplines out their who are dedicated to making sure you get better an that ypu have
+            someone to talk. I am here at anytime to the day no matter what. So please 
+            even after this if you still dont want to or cant talk to someone close to you, get in 
+            contact with any of those helplines and if you cant do that I'm still here for you, 
+            until your confident enough or have enough information to talk to someone in the real world"
+
+  utter_Self_harm_d_1:
+    - text: "No problem happy to help you whenever you need. If you feel like that again feel
+            feel free to speak to me im here to help after all!! And remember the help section
+            as well as another place to go to for help, or use my Menu feature by saying 'Menu' "
+
+  utter_Self_harm_d_2:
+    - text: "Don't worry!! We can work this out it's ok if you don't want to talk to people at the
+            it can be very difficult, so before you think of trying anything too serious please try 
+            talking to me for a bit so we can try to work this us, this might help us find a better
+            solution to all this!! Even give  our help section a browse there might be something that
+            can fit your situation better"
+
+  utter_Self_harm_e_1:
+    - text: "I know your thinking that going to someone may not be the best out for you
+            but a problem shared is a problem halved. I can guarantee that the person your
+            talking too will also appreciate that you spoke to them about this. If you need
+            to chat again your buddy's here for you!!!!"
+
+  utter_Self_harm_e_2:
+    - text: "Sorry if im feeling pushy friend i just dont want anything bad to happen to you.
+            I wont force you or pester you to talk to someone but please dont consider doing anything
+            bad to yourself in the mean time. Try talking to me for as long as you want so we can sort this out.
+            If you want you can even use the built in menu. if you type 'Coping Menu' you can get
+            great advice for coping with certain mental health conditions or situations. You can even you the 
+            normal 'Menu' for further advice!!"
+
+  utter_Coping_strategies_A:
+    - text: "Dont worry friend, i know a few ways to deal with general mental health problems,
+            in some cases this may not work on serve cases of particular mental health but can 
+            be used to deal with everyday struggles \n 
+            1. Relax and reduce stress \n
+            - could be having a bath or going for a walk \n
+            2. Try something creative \n
+            - can help distract you from difficult thoughts or feelings\n
+            3. Connect with others\n
+            - greater sense of belonging and reduce feelings of loneliness\n
+            4. Look after your physical health\n
+            - Living a healthy life (NHS)\n
+            5. Get enough sleep\n
+            - Sleep is incredibly important in a persons feelings! \n
+            If you need more specific coping mechanisms for specific Mental health conditions
+            just type 'Coping Menu' to see the full list"
+
+  utter_Coping_strategies_B:
+    - text: " Mental health coping command menu: \n
+              Coping depression \n
+              Coping Stress \n
+              Coping Anxiety \n
+              Coping Body dysmorphic \n
+              Coping PTSD \n
+              Coping PTSD flashbacks \n
+              Coping ADHD \n
+              Coping OCD \n
+              Coping Eating Disorder \n
+              Coping Insomnia \n
+              Coping Anger \n
+              Coping Grief  \n
+              Coping Antisocial \n
+              Antisocial Trauma \n
+              Coping Abusive relationship \n
+              Coping addiction \n
+              Coping Racism \n
+              Phobias Menu \n
+              If you want information on the REF just type on of the names above
+              along with ref and the name of the org will be provided, Hope this helps
+              Friend!!
+              "
+  utter_Coping_strategies_C_Depression:
+    - text: "1. Stay in touch \n
+             - Keep Socialising \n
+             2. Be more active \n
+             - Exercising can lift mood
+             3. Face your fears \n
+             - Dont avoid things you find difficult, which can boost confidence \n
+             4. Eat healthy stay in shape \n
+             - Visit REF for more details
+             5. Have a routine \n
+             - Keeping sleeping routine, eating at correct time working out \n
+             6. Seeking help for depression \n
+             - As you are doing now look for help when you need it where ever you need it \n
+             For Ref please type 'depression ref' for more information please use coping menu!!
+             "
+
+  utter_Coping_strategies_C_Depression_REF:
+    - text: "NHS: How to cope with depression"
+
+  utter_Coping_strategies_C_Stress:
+    - text: "1. Take a brake from the news \n
+             -  Hearing traumatic events constantly can upset you more than you think \n
+             2. Take care of yourself \n
+             - Exercise can relive stress, so can good sleep and a good diet \n
+             3. Make time to unwind\n
+             - Try to do things you enjoy \n
+             4. Talk to others\n
+             - Share your problems with you trust \n
+             5. Avoid substance abuse  \n
+             - Feels like it helps but can cause more problems in life \n
+             For Ref please type 'Stress ref' for more information please use coping menu!!
+             "
+
+  utter_Coping_strategies_C_Stress_REF:
+    - text: "CDC.gov: Coping with stress"
+
+  utter_Coping_strategies_C_Anxiety:
+    - text: "1. Talk to someone you trust \n
+             - Talking to someone you trust about what's making you anxious could be a relief. \n
+             2. Try to manage your worries \n
+             - Writing your worries down or focusing in on them \n
+             3. Look after your physical health \n
+             - Enough sleep, diet and exercise \n
+             4. Try breathing exercises \n
+             - Breathing exercises can help you cope and feel more in control \n
+             5. Try peer support groups \n
+             - brings together people who've had similar experiences to support each other \n
+             For Ref please type 'Anxiety ref' for more information please use coping menu!!
+             "
+
+  utter_Coping_strategies_C_Anxiety_REF:
+    - text: "Mind.org: Anxiety and panic attacks \n
+             Mind.org: Managing anxiety with creativity - by Damien's blog"
+
+  utter_Coping_strategies_C_Body_dysmorphic:
+    - text: "Treatment for body dysmorphic disorder often includes a combination of cognitive behavioral therapy and medications. \n
+             1. Write in a journal \n
+             - This can help you better identify negative thoughts, emotions and behaviors \n
+             2. Don't become isolated \n
+             - Try to participate in social activities and regularly get together with friends and family who can act as healthy supports. \n
+             3. Take care of yourself \n
+             - Eat healthy, stay physically active and get sufficient sleep \n
+             4. Join a support group \n
+             - Connect with others facing similar challenges \n
+             5. Stay focused on your goals \n
+             - Recovery is an ongoing process. Stay motivated by keeping your recovery goals in mind \n
+             6. Learn relaxation and stress management \n
+             - Try practicing stress-reduction techniques such as meditation or deep breathing \n
+             7. Don't make important decisions in feelings distress or despair \n
+             - You may not be thinking clearly and may regret your decisions later\n
+             For Ref please type 'Body dysmorphic ref' for more information please use coping menu!!
+             "
+
+  utter_Coping_strategies_C_Body_dysmorphic_REF:
+    - text: "Mayo Clinic: Body dysmorphic disorder"
+
+  utter_Coping_strategies_C_PTSD:
+    - text: "1. Get to know your trigger  \n
+             - You might find that certain experiences, situations or people seem to trigger flashbacks or other symptoms. \n
+             2. Confide in someone \n
+             -  You don't need to be able to describe the trauma to tell someone how you are currently feeling though. \n
+             3. Give yourself time \n
+             - Everyone has their own unique response to trauma and it's important to take things at your own pace.\n
+             4. Try peer support \n
+             - Peer support brings together people who have had similar experiences, which some people find very helpful. \n
+             5. Find specialist support \n
+             - You might find it useful to contact an organisation that specialises in advice and support for PTSD, such as ASSIST Trauma Care \n
+             5. Look after your physical health  \n
+             - Try to exercise, keep a healthy diet, avoid substance abuse and get good sleep. \n
+             For Ref please type 'PTSD ref' for more information please use coping menu!!
+             "
+
+  utter_Coping_strategies_C_PTSD_REF:
+    - text: "Mind.org: Post-traumatic stress disorder (PTSD)"
+
+  utter_Coping_strategies_C_PTSD_flashbacks:
+    - text: "1. Focus on your breathing \n
+             - When you are frightened, concentrate on breathing slowly in and out while counting to five \n
+             2. Carry an object that reminds you of the present \n
+             - Some people find it helpful to touch or look at a particular object during a flashback \n
+             3. Tell yourself that you are safe \n
+             - Tell yourself that the trauma is over and you are safe now \n
+             4. Comfort yourself \n
+             - You could curl up in a blanket, cuddle a pet, listen to soothing music or watch a favourite film \n
+             5. Keep a diary \n
+             - Making a note of what happens when you have a flashback could help you spot patterns in what triggers these experiences for you\n
+             6. Try grounding techniques \n
+             - Grounding techniques can keep you connected to the present and help you cope with flashbacks or intrusive thoughts \n
+             For Ref please type 'PTSD flashbacks ref' for more information please use coping menu!!
+             "
+
+  utter_Coping_strategies_C_PTSD_flashbacks_REF:
+    - text: "Mind.org: Post-traumatic stress disorder (PTSD)"
+
+  utter_Coping_strategies_C_ADHD:
+    - text: "1. Make lists, keep diaries, stick up reminders \n
+             - Plan what you need to do \n
+             2. Exercising regularly \n
+             - Can keep you more focused \n
+             3. Find ways to help you relax, \n
+             - Such as listening to music or learning breathing exercises for stress \n
+             4. Contact college, university or job on condition\n
+             - Ask about what adjustments can be made to support you. \n
+             5. Contact or join a local or national support group \n
+             - Can be a good source of support, information and advice. \n
+             For Ref please type 'ADHD ref' for more information please use coping menu!!
+             "
+
+  utter_Coping_strategies_C_ADHD_REF:
+    - text: "NHS: Living with Attention deficit hyperactivity disorder (ADHD)"
+
+  utter_Coping_strategies_C_OCD:
+    - text: "1. Try self-Help resources \n
+             -  You can ask your GP to recommend a self-help book from a Reading Well scheme. \n
+             2. Build your own support network \n
+             - Talk to someone you trust about your OCD and Spend time with friends and family. \n
+             3. Try peer support \n
+             - You could try talking to other people who have OCD to share your feelings, experiences and ideas. \n
+             4. Learn to let go \n
+             - Manage your stress, Try a relaxation technique and Try mindfulness \n
+             5. Look after your physical health \n
+             - Get sleep, think about your diet and try doing some physical exercises \n
+             For Ref please type 'OCD ref' for more information please use coping menu!!
+             "
+
+  utter_Coping_strategies_C_OCD_REF:
+    - text: "Mind.org: Obsessive-compulsive disorder (OCD) \n
+             Reading-well.org: Mental health books \n
+             OCDUK.org: OCD and Self-Help Resources"
+
+  utter_Coping_strategies_C_Eating_Disorder:
+    - text: "1. Notice meal times and content \n
+             - If you record your level of satiety, urges to binge/restrict/purge, you may learn if there are foods that trigger \n
+             2. Notice the way you speak to yourself about your food, body, or behaviors \n
+             - Begin to add positive statements, gradually letting go of the negative. \n
+             3. Get a journal \n
+             - Write your feelings throughout the day. \n
+             4. Grow your support system \n
+             - The point is to find safe people to help you feel supported in recovery. \n
+             5. Get a list of feelings \n
+             - If you have difficulty identifying your experience, refer to the list throughout the day, especially meal times. \n
+             For Ref please type Eating Disorder ref' for more information please use coping menu!!
+             "
+
+  utter_Coping_strategies_C_Eating_Disorder_REF:
+    - text: "The Eating Disorder Foundation.org: About Eating Disorders"
+
+  utter_Coping_strategies_C_Insomnia:
+    - text: "1. Go to bed and wake up at the same time every day \n
+             -  This creates a consistent sleeping pattern letting your body know when its time to go to sleep\n
+             2. Relax at least 1 hour before bed \n
+             - Stress or anxiety can hinder sleep. \n
+             3. Make sure your bedroom is dark and quiet \n
+             - Making sure you go to sleep on time \n
+             4. Exercise regularly during the day \n
+             - Makes it easier to go to sleep being more tired from working out. \n
+             5. make sure your mattress, pillows and covers are comfortable \n
+             - A comfortable environment will make it easier to sleep \n
+             For Ref please type 'Insomnia ref' for more information please use coping menu!!
+             "
+
+  utter_Coping_strategies_C_Insomnia_REF:
+    - text: "NHS: Insomnia"
+
+  utter_Coping_strategies_C_Anger:
+    - text: "1. Breathe slowly \n
+             - Try to breathe out for longer than you breathe in and focus on each breath as you take it. \n
+             2. Relax your body \n
+             - If you can feel your body getting tense, try focusing on each part of your body in turn to tense and then relax your muscles. \n
+             3. Try mindfulness techniques \n
+             - Mindfulness can help you to be aware of when you're getting angry and can help calm your body and mind down. \n
+             4. Exercise \n
+             - Sports like running or boxing can be really helpful for releasing pent up energy. \n
+             5. Use up your energy safely in other ways \n
+             - This can help relieve some of your angry feelings in a way that doesn't hurt yourself or others.\n
+             6. Do something to distract yourself mentally or physically \n
+             - Anything that completely changes your situation, thoughts or patterns can help stop your anger escalating. \n
+             For Ref please type 'Anger ref' for more information please use coping menu!!
+             "
+
+  utter_Coping_strategies_C_Anger_REF:
+    - text: "Mind.org: How to cope with anger \n
+             Mind.org: Relaxation \n
+             Mind.org: Mindfulness"
+
+  utter_Coping_strategies_C_Grief:
+    - text: "1. Take your time \n
+             - Take in what has happened, talk about the person who has died and feel the pain and the loneliness for yourself \n
+             2. Do it your way \n
+             - There's no right or wrong way to grieve. Just try to do what feels right for you. \n
+             3. Take care of yourself \n
+             - Try to eat well, and avoid drinking too much alcohol. It’s also important to know that it’s normal to feel afraid, have nightmares or struggle to see the point of life. \n
+             4. Is normal \n
+             - It's part of what it is to be human and to have feelings. \n
+             5. Is a journey \n
+             - It's often hard, but it'll get easier. \n
+             6. Takes time \n
+             - Often much longer than you and many people around you expect. \n
+             For Ref please type 'Grief ref' for more information please use coping menu!!
+             "
+
+  utter_Coping_strategies_C_Grief_REF:
+    - text: "NHS Inform.scot: Coping with grief"
+
+  utter_Coping_strategies_C_Antisocial:
+    - text: "This condition unlike the rest doesnt have many coping mechanisms you can do from home most help comes from doctors\n
+             1. Talk therapy \n
+             - Talk therapy, also called psychotherapy, is sometimes used to treat antisocial personality disorder. Therapy may include, for example, anger and violence management, treatment for problems with alcohol or drugs, and treatment for other mental health conditions. \n
+             2. Medications \n
+             - There are no medicines specifically approved by the Food and Drug Administration (FDA) to treat antisocial personality disorder. Health care providers may prescribe medicines for conditions that sometimes occur along with antisocial personality disorder, such as anxiety or depression, or for symptoms of aggression.\n
+             For Ref please type 'Antisocial ref' for more information please use coping menu!!
+             "
+
+  utter_Coping_strategies_C_Antisocial_REF:
+    - text: "Mayo Clinic.org: Antisocial personality disorder"
+
+  utter_Coping_strategies_C_Trauma:
+    - text: "1. Give yourself time \n
+             - Try not to put pressure on yourself to feel better straight away. \n
+             2. Talk about the event \n
+             - However, research has shown that talking about the event and your feelings can help you to be more resilient. \n
+             3. Speak to others that have experienced the same thing as you. \n
+             - People recover and react to the same events in different ways, try not to compare your own recovery to someone else’s. \n
+             4. Ask for support \n
+             - Seeking support from friends, family or other people that you trust can help you to cope better after a traumatic event. \n
+             5. Avoid spending lots of time alone \n
+             - While this might not be possible, if you live alone you might want to see if you can move in with family or a close friend after a traumatic event. If this isn’t possible, try to spend more time with people close to you, or stay in contact with them over the phone or through video calls. \n
+             6. Stick to your routine \n
+             - Try to eat and exercise regularly, and get enough sleep. \n
+             7. Consider seeking professional help\n
+             - Some people can find it helpful to speak to their GP if they are struggling. Generally, it is not helpful to seek professional mental health support in the first month after a traumatic event, unless your GP recommends this because your symptoms are so severe. \n
+             8. Notice how you’re feeling \n
+             - For the first few months following a traumatic event, you might want to pay attention to how you are feeling over time. If you don’t feel like you are getting better, or if you start to feel worse, you should speak to your GP. \n
+             9. Take care \n
+             -  Try not to use alcohol or illegal drugs following a traumatic event as a way to cope. While they can make you feel better in the short term, they won’t help your recovery in the long term. \n
+             For Ref please type Trauma ref' for more information please use coping menu!!
+             "
+
+  utter_Coping_strategies_C_Trauma_REF:
+    - text: "Mind.org: Trauma"
+
+  utter_Coping_strategies_C_Abusive_relationship_Current:
+    - text: "Nobody should have to cope with abuse, his section is less about coping and more about what to do in that situation
+             1. Tell someone \n
+             -  Is there a friend, neighbour, or family member you trust? Let them know you might be at risk from your partner. 
+            Arrange a secret code with someone who lives close by (like ringing and hanging up, or a blank text), that lets them know you need help. \n
+             2. Get specialist support \n
+             - here are likely to be local charities in your area that can provide ongoing support, without your partner finding out.  \n
+             3. Contact the police \n
+             - Be ready to call 999 if you or your children are in danger. You can also call 101 in a non-emergency situation to report previous incidents or get advice from the local domestic abuse team. \n
+             4. Keep a record \n
+             - Think about ways you can gather evidence of your partner’s behaviour safely. Make notes of abusive incidents, including times, dates, names and details of how it made you feel. \n
+             5. Know your rights and options \n
+             - Find out about your legal and housing rights and talk to a solicitor if possible. \n
+             6. Financial independence \n
+             - If it is possible to do so without alerting your partner, start putting some money aside for if you need to leave in a hurry. \n
+             7. Make copies \n
+             - passports, birth certificates, court orders, marriage certificates, and keep them in a safe place. You could ask someone you trust to keep copies safe for you. \n
+             8. In an emergency \n
+             - If your partner is pursuing you, or attacking you, ring 999 as soon as possible. \n
+             For Ref please type Abusive relationship currently ref' for more information please use coping menu!!
+             "
+
+  utter_Coping_strategies_C_Abusive_relationship_Current_REF:
+    - text: "National Domestic Abuse Helpline: I am still living with my abuser"
+
+  utter_Coping_strategies_C_Abusive_relationship_Planning:
+    - text: "Nobody should have to cope with abuse, his section is less about coping and more about what to do in that situation
+             1. Creating an emergency bag \n
+             -  If it is safe to do so without your abuser noticing, keep a bag with some cash, important documents 
+             (including birth certificates, marriage certificates, tenancy/mortgage documents, ID documents, National Insurance Number, driving licence), a set of keys, some clothes, any medication, phone charger and emergency numbers. \n
+             2. Making a plan \n
+             -  Think about your partners’ routines and choose a safe time to leave your home. \n
+             3. Arranging a place to stay \n
+             - This might be the home of a trusted friend or family member, but make sure your abuser doesn’t know the location. \n
+             4. Considering ways he might track you \n
+             - It is important to think about all the ways your partner might be able to find out where you are. \n
+             For Ref please type Abusive relationship Planning ref' for more information please use coping menu!!
+             "
+
+  utter_Coping_strategies_C_Abusive_relationship_Planning_REF:
+    - text: "National Domestic Abuse Helpline: I am planning to leave my abuser"
+
+  utter_Coping_strategies_C_Abusive_relationship_Left:
+    - text: "1. Explore civil orders \n
+             - These are civil orders that stop an abusive person harassing you. \n
+             2. Tell someone \n
+             - Is there a friend, neighbour, or family member you trust? Let them know you might be at risk from your partner. \n
+             3. Contact the police \n
+             - Be ready to call 999 if you or your children are in danger. \n
+             4. Make your home more secure \n
+             - Many local authorities offer sanctuary schemes for people who have left abusive relationships. \n
+             5. Get specialist support \n
+             - There are likely to be local charities in your area that can provide outreach support in the community. \n
+             6. Support around children \n
+             - Many abusers continue to control and harass their partners through their children and child contact arrangements. \n
+             7. Keep a record \n
+             - Think about ways you can gather evidence of your partner’s behaviour safely. Make notes of abusive incidents, including times, dates, names and details of how it made you feel. \n
+             For Ref please type Abusive relationship Left ref' for more information please use coping menu!!
+             "
+
+  utter_Coping_strategies_C_Abusive_relationship_Left_REF:
+    - text: "National Domestic Abuse Helpline: I have already left my abuser"
+
+  utter_Coping_strategies_C_Addiction:
+    - text: "1. Set a quit date \n
+             - It might be helpful to choose a meaningful date like a special event, birthday, or anniversary. \n
+             2. Change your environment \n
+             - Remove any reminders of your addiction from your home and workplace. \n
+             3. Distract yourself \n
+             - Instead of giving in to an urge to use, come up with alternative activities, such as going for a walk or calling a friend or family member to talk, so that you keep busy until the urge passes. \n
+             4. Review your past attempts at quitting \n
+             - Think about what worked and what did not. Consider what might have contributed to relapse and make changes accordingly. \n
+             5. Create a support network \n
+             - Talk to your family and friends and ask for their encouragement and support. \n
+             For Ref please type Addiction ref' for more information please use coping menu!!
+             "
+
+  utter_Coping_strategies_C_Addiction_REF:
+    - text: "Harvard Health Publishing: 5 action steps for quitting an addiction"
+
+  utter_Coping_strategies_C_Homophobia:
+    - text: "Rather than Steps here is a list of websites the provide support to people struggling to deal with it \n
+             1. Mind LGBTQ \n
+             - Get information about mental health support for people who are lesbian, gay, bisexual, trans, intersex, non-binary, queer or questioning (LGBTIQ). \n
+             2. Pink Therapy \n
+             - Pink Therapy has an online directory of therapists who work with people who are lesbian, gay, bisexual, transgender, intersex and queer or questioning (LGBTIQ), and people who are gender- and sexual-diverse (GSD). \n
+             3. Gendered Intelligence \n
+             - The organisation runs youth groups in London, Leeds and Bristol for trans, non-binary and questioning young people. \n
+             4. LGBT Foundation \n
+             - The LGBT Foundation offers information, advice, and support services, including a Talking Therapies Programme to LGBT people. \n
+             5. London Friend \n
+             - London Friend offers support groups and services, such as counselling and drug and alcohol support, to LGBT people in and around London. \n
+             6. Switchboard LGBT+ Helpline \n
+             - Switchboard provides a listening service for LGBT+ people over the phone, via email and online chat. It can provide you with contact details of an LGBT-friendly therapist. \n
+             For Ref please type Homophobia ref for more information please use coping menu!!
+             "
+
+  utter_Coping_strategies_C_Homophobia_REF:
+    - text: "NHS: Mental health support if you're LGBTQ+"
+
+  utter_Coping_strategies_C_Racism:
+    - text: "1. Talk to someone you trust \n
+             - Speaking to someone who understands racism can be helpful. It may be that having someone listen to you and show they care can help in itself. \n
+             2. Find ways to build your self-esteem \n
+             - Try and take time to praise yourself and think about what you're proud of. For example, you could think about your character traits, skills or things you’ve done. \n
+             3. Take time to celebrate all parts of your identity  \n
+             - This may help you get to know yourself and challenge racist assumptions about who you are – and who you aren't. \n
+             4. Try some relaxations techniques \n
+             - Relaxation can help when you're feeling stressed, anxious or overwhelmed. \n
+             5. Try mindfulness \n
+             - Mindfulness is a technique you can learn. It involves making a special effort to notice what's happening in the present moment – without judging anything. \n
+             6. Get creative \n
+             - Getting creative can help you express thoughts and feelings that are weighing on your mind. \n
+             7. Try to look after your physical health \n
+             - Experiencing racism can affect our body as well as our mind. Physical health and mental health are connected, so looking after one can boost both. \n
+             8. Take care with news and social media \n
+             - Seeing news stories or social media content about racism might sometimes make you feel anxious or overwhelmed. \n
+             9. Treat yourself with compassion and patience \n
+             - It can be good to spend a while sitting with your experiences. But it's also ok to try and take a break from thinking about them when this feels useful. \n
+             For Ref please type Racism ref for more information please use coping menu!!
+             "
+  utter_Coping_strategies_C_Racism_REF:
+    - text: "Mind.org: Racism and mental health"
+
+  utter_Coping_strategies_C_Phobias_Menu:
+    - text: "Of course these are not all the phobias in the world but the most common ones that people may have to deal with in their life
+             1. Coping Tokophobia (extreme fear of childbirth) \n
+             2. Coping claustrophobia (Irrational fear of confined spaces) \n
+             3. Coping Mysophobia (Extreme fear of germs) \n
+             4. Coping Hypochondria (So much time worrying you're ill, or about getting ill) \n
+             5. Coping Atychiphobia (Intense fear of failure) \n
+             6. Coping general Phobia(How to cope with general phobias) \n
+             To access this please type 'Coping' Followed by the phobia.
+             "
+
+  utter_Coping_strategies_C_Phobias:
+    - text: "1. Mindfulness strategies \n
+             - May be helpful in learning how to tolerate anxiety and reduce avoidance behaviors. \n
+             2. Relaxation techniques \n
+             - Such as deep breathing, progressive muscle relaxation or yoga, may help cope with anxiety and stress. \n
+             3. Physical activity and exercise \n
+             - May be helpful in managing anxiety associated with specific phobias. \n
+             4. Try not to avoid feared situations \n
+             - Practice staying near feared situations as frequently as you can rather than avoiding them completely. \n
+             5. Reach out \n
+             - Consider joining a self-help or support group where you can connect with others who understand what you're going through. \n
+             5. Take care of yourself \n
+             - Get enough rest, eat healthy and try to be physically active every day. \n
+             For Ref please type General phobia ref for more information please use coping menu!!
+             "
+
+  utter_Coping_strategies_C_Phobias_REF:
+    - text: "Mayo clinc.org: Specific phobias"
+
+  utter_Coping_strategies_C_Phobias_1:
+    - text: "1. Talk to someone you trust \n
+             - Having someone listen to your claustrophobic fears can be helpful to you. \n
+             2. Learn strategies to relax \n
+             - Visualize and focus your attention on something that makes you calm. \n
+             3. Join a support group \n
+             - Support groups can be helpful in knowing you are not alone and for sharing tips and advice. \n
+             4. Check if an organization provides a course for overcoming your fear \n
+             - For example, if you’re afraid of flying, check if an airline or your local airport offers a class on fear of flying. \n
+             5. Take care of yourself \n
+             - Healthy lifestyle choices can decrease your anxiety. \n
+             For Ref please type claustrophobia ref for more information please use coping menu!!
+             "
+
+  utter_Coping_strategies_C_Phobias_1_REF:
+    - text: "Cleveland Clinic: Claustrophobia (Fear of Enclosed Spaces) "
+
+  utter_Coping_strategies_C_Phobias_2:
+    - text: "1. Cognitive behavioral therapy (CBT) \n
+             -  Undergoing CBT helps you address why germs make you uncomfortable. \n
+             2. Exposure Therapy \n
+             - When you feel comfortable, your therapist gradually exposes you to situations where germs may be present. \n
+             3. Stress reduction \n
+             - Yoga, meditation and other relaxation techniques quiet an overactive mind. \n
+             For Ref please type Mysophobia ref for more information please use coping menu!!
+             "
+
+  utter_Coping_strategies_C_Phobias_2_REF:
+    - text: "Cleveland Clinic:Mysophobia (Germophobia)"
+
+  utter_Coping_strategies_C_Phobias_3:
+    - text: "1. Keep a diary \n
+             - note how often you check your body, ask people for reassurance, or look at health information, then try to reduce that \n
+             2. Challenge your thoughts \n
+             - Draw a table with 2 columns, write your health worries in the 1st column, then more balanced thoughts in the 2nd. \n
+             3. Keep busy with other things \n
+             - When you get the urge to check your body, for example, distract yourself by going for a walk or calling a friend \n
+             4. Get back to normal activities \n
+             - try to gradually start doing things you've been avoiding because of your health worries, such as sports or socialising \n
+             5. Try to relax \n
+             - Try breathing exercises \n
+             For Ref please type Hypochondria ref for more information please use coping menu!!
+             "
+
+  utter_Coping_strategies_C_Phobias_3_REF:
+    - text: "NHS: Health anxiety"
+
+  utter_Coping_strategies_C_Phobias_4:
+    - text: "1. Create a strong support system \n
+             - Friends and family members. \n
+             2. Don’t consume caffeine or alcohol or use drugs \n
+             - which can make stress and anxiety worse. \n
+             3. Get help from a healthcare provider \n
+             - As soon as you notice your fear is affecting your life. \n
+             4. Try to stay active \n
+             - Eat a healthy diet and get plenty of sleep. \n
+             For Ref please type Atychiphobia ref' for more information please use coping menu!!
+             "
+
+  utter_Coping_strategies_C_Phobias_4_REF:
+    - text: "Cleveland Clinic: Atychiphobia (Fear of Failure)"
+
+  utter_Coping_strategies_C_Phobias_5:
+    - text: "1. Cognitive Behavioral Therapy (CBT) \n
+             - Undergoing CBT helps you identify the aspects of childbirth that are fueling the phobia. You can also learn healthy coping methods by working with a mental health professional. \n
+             2. Hypnotherapy \n
+             - Hypnotherapy uses focused relaxation to achieve a heightened sense of awareness. While in this state, a mental health provider helps you explore subconscious thoughts that are holding you back. \n
+             3. Stress reduction \n
+             - Yoga, meditation and other relaxation techniques clear your mind. This may make you feel more confident about childbirth. \n
+             4. Attending prenatal classes \n
+             - These classes guide you through what to expect during childbirth. They take place toward the end of your pregnancy. \n
+             5. Taking early pregnancy classes \n
+             - Most facilities offer guided tours and give you the opportunity to ask questions. \n
+             6. Joining a support group \n
+             - There are many online pregnancy forums, including options for people trying to conceive. Your hospital may also host an in-person group. \n
+             For Ref please type Tokophobia ref' for more information please use coping menu!!
+             "
+
+  utter_Coping_strategies_C_Phobias_5_REF:
+    - text: "Cleveland Clinic: Tokophobia (Fear of Childbirth)"
+
+  utter_Depression_Description:
+    - text: "Depression (also known as major depression, major depressive disorder, or clinical depression) is a common but serious mood disorder. 
+            It causes severe symptoms that affect how a person feels, thinks, and handles daily activities, such as sleeping, eating, or working. \n
+            - By National Institute of Mental Health"
+
+  utter_Anxiety_Description:
+    - text: "Anxiety is what we feel when we are worried, tense or afraid – particularly about things that are about to happen, or which we think could happen in the future.
+            Anxiety is a natural human response when we feel that we are under threat. It can be experienced through our thoughts, feelings and physical sensations. \n 
+            - By Mind.org"
+
+  utter_Social_anxiety_disorder:
+    - text: "Social anxiety disorder, also called social phobia, is a long-term and overwhelming fear of social situations.
+            It's a common problem that usually starts during the teenage years. It can be very distressing and have a big impact on your life.
+            For some people it gets better as they get older. But for many people it does not go away on its own without treatment. \n
+            - By NHS"
+
+  utter_Mood_Swings:
+    - text: "Experiencing a fluctuation of emotion for long periods is known as a mood swing. Some indications that 
+            you might be going through mood swings are extreme low moods for an extended period of more than two weeks, 
+            signs of feeling ups and downs, and the inability to explain why you feel a certain way. \n
+            - By Centerstone"
+
+  utter_Body_dysmorphic_disorder:
+    - text: "Body dysmorphic disorder (BDD), or body dysmorphia, is a mental health condition where a person spends a 
+            lot of time worrying about flaws in their appearance. These flaws are often unnoticeable to others. \n
+            People of any age can have BDD, but it's most common in teenagers and young adults. It affects both men and women.
+            Having BDD does not mean you're vain or self-obsessed. It can be very upsetting and have a big impact on your life. \n
+            - By NHS"
+
+  utter_PTSD:
+    - text: "Post-traumatic stress disorder (PTSD) is a mental health problem you may develop after experiencing 
+            traumatic events. The condition was first recognised in war veterans. It has had different names in the past, 
+            such as 'shell shock', but it's not only diagnosed in soldiers. A wide range of traumatic experiences can be causes of PTSD. \n
+            - By Mind.Org"
+
+  utter_OCD:
+    - text: "Obsessive compulsive disorder (OCD) is a mental health condition where a person has obsessive thoughts and compulsive behaviours.
+            OCD can affect men, women and children. People can start having symptoms from as early as 6 years old, but it often begins around puberty and early adulthood.
+            OCD can be distressing and significantly interfere with your life, but treatment can help you keep it under control. \n
+            - By NHS"
+
+  utter_ADHD:
+    - text: "ADHD is one of the most common neurodevelopmental disorders of childhood. It is usually first diagnosed in 
+            childhood and often lasts into adulthood. Children with ADHD may have trouble paying attention, controlling 
+            impulsive behaviors (may act without thinking about what the result will be), or be overly active. \n
+            - BY Center for disease, control and prevention (CDC)"
+
+  utter_BPD:
+    - text: "Borderline personality disorder (BPD) is a type of personality disorder. You might be diagnosed with a 
+            personality disorder if you have difficulties with how you think and feel about yourself and other people. 
+            And if these difficulties make it hard to cope day to day. \n
+            - By Mind.org"
+
+  utter_Eating_disorders:
+    - text: "An eating disorder is a mental health condition where you use the control of food to cope with feelings and other situations.
+            Unhealthy eating behaviours may include eating too much or too little or worrying about your weight or body shape.
+            Anyone can get an eating disorder, but teenagers between 13 and 17 are mostly affected.
+            With treatment, most people can recover from an eating disorder. \n
+            - By NHS"
+
+  utter_addiction:
+    - text: "Addiction is a common problem, but help is available.
+            Addiction is defined as not having control over doing, taking or using something to the point where it could be harmful to you.
+            Addiction is most commonly associated with gambling, drugs, alcohol and smoking, but it's possible to be addicted 
+            to just about anything, including: Work, Internet, Solvent and Shopping \n
+            - By the NHS"
+
+  utter_Generalized_anxiety_disorder:
+    - text: "Anxiety is a feeling of unease, such as worry or fear, that can be mild or severe
+            Everyone has feelings of anxiety at some point in their life. For example, you may feel worried and anxious about sitting an exam, or having a medical test or job interview.
+            During times like these, feeling anxious can be perfectly normal. \n
+            - By NHS"
+
+  utter_Panic_disorder:
+    - text: "Panic disorder is an anxiety disorder where you regularly have sudden attacks of panic or fear.
+            Everyone experiences feelings of anxiety and panic at certain times. It's a natural response to stressful or dangerous situations.
+            But someone with panic disorder has feelings of anxiety, stress and panic regularly and at any time, often for no apparent reason. \n
+            - By Panic Disorder"
+
+  utter_Seasonal_affective_disorder:
+    - text: "Seasonal affective disorder (SAD) is a type of depression that comes and goes in a seasonal pattern.
+            SAD is sometimes known as winter depression because the symptoms are usually more apparent and more severe during the winter.
+            Some people with SAD may have symptoms during the summer and feel better during the winter. \n
+            - By NHS"
+
+  utter_Abusive_relationship:
+    - text: "Anyone forced to change their behaviour because they are frightened of their partner or ex-partner’s reaction is experiencing abuse.
+            Domestic abuse can happen to anyone, regardless of age, background, gender, religion, sexuality or ethnicity. However, statistics show most domestic abuse is carried out by men and experienced by women.
+            Domestic abuse is never the fault of the person who is experiencing it. Domestic abuse is a crime. \n
+            - By Refuge"
+
+  utter_Family_problems:
+    - text: "Family issues are when conflict between or related to family members becomes especially intense or frequent,
+            to the point that it interrupts your day-to-day life. Some degree of conflict within families is normal 
+            (and even, to a point, healthy) and the family dynamic for each person may be different. \n
+            - By Zencare"
+
+  utter_Stress_Description:
+    - text: "Stress can be defined as a state of worry or mental tension caused by a difficult situation. Stress is a 
+            natural human response that prompts us to address challenges and threats in our lives. Everyone experiences 
+            stress to some degree. The way we respond to stress, however, makes a big difference to our overall well-being. \n
+            - By WHO (World Health Organisation)"
+
+  utter_Grief:
+    - text: "Grief can be difficult and stressful and nearly everybody goes through it at some point in their lives. 
+            Despite this, it can be very difficult to predict how we might react to a loss, as it is a very individual process. \n
+            - By Mind.org"
+
+  utter_Insomnia:
+    - text: "Insomnia means you regularly have problems sleeping. It usually gets better by changing your sleeping habits. \n
+            - By NHS"
+
+  utter_Phobias:
+    - text: "A phobia is an overwhelming and debilitating fear of an object, place, situation, feeling or animal.
+            Phobias are more pronounced than fears. They develop when a person has an exaggerated or unrealistic sense of danger about a situation or object.
+            If a phobia becomes very severe, a person may organise their life around avoiding the thing that's causing 
+            them anxiety. As well as restricting their day-to-day life, it can also cause a lot of distress. \n
+            - By NHS"
+
+  utter_Trauma_Description:
+    - text: "Going through very stressful, frightening or distressing events is sometimes called trauma. 
+            When we talk about emotional or psychological trauma, we might mean: situations or events we find traumatic
+            and how we're affected by our experiences. Traumatic events can happen at any age and can cause long-lasting 
+            harm. Everyone has a different reaction to trauma, so you might notice any effects quickly, or a long time afterwards. \n
+            - By Mind.org"
+
+  utter_Tokophobia:
+    - text: "Tokophobia is a pathological fear of pregnancy and can lead to avoidance of childbirth. It can be classified 
+            as primary or secondary. Primary is morbid fear of childbirth in a woman, who has no previous experience of pregnancy. \n
+            - By National Institutes of Health (.gov)"
+
+  utter_Claustrophobia:
+    - text: "Claustrophobia is the irrational fear of confined spaces.
+            People affected by claustrophobia will often go out of their way to avoid confined spaces, such as lifts, 
+            tunnels, tube trains and public toilets. But avoiding these places may reinforce the fear. Some people with 
+            claustrophobia experience mild anxiety when in a confined space, while others have severe anxiety or a panic attack. \n
+            - By NHS"
+
+  utter_Mysophobia:
+    - text: "Mysophobia is an extreme fear of germs. You may go out of your way to avoid situations that expose you to germs. 
+            The phobia and steps you take to avoid it worsen over time. You may find yourself stuck in a cycle of repetitive 
+            behaviors that affect your quality of life, similar to obsessive-compulsive disorder (OCD). \n
+            - By Cleveland Clinic"
+
+  utter_Hypochondria:
+    - text: "Health anxiety/Hypochondria is when you spend so much time worrying you're ill, or about getting ill, that it starts to 
+            take over your life. It's related to obsessive compulsive disorder (OCD).\n 
+            - By NHS"
+
+  utter_Atychiphobia:
+    - text: "Atychiphobia is an intense fear of failure. It may cause you to put off or avoid any activity or scenario 
+            that has the potential for an unsuccessful outcome. Someone with this condition may be scared to try new things, 
+            take risks or embrace growth for fear of failure. \n
+            - By Cleveland Clinic "
+
+  utter_Bipolar_Disorder:
+    - text: "Bipolar disorder is a mental health condition that affects your moods, which can swing from 1 extreme to 
+            another. It used to be known as manic depression. \n 
+            - By NHS"
+
+  utter_Schizophrenia:
+    - text: "Schizophrenia is a severe long-term mental health condition. It causes a range of different psychological symptoms.
+            Doctors often describe schizophrenia as a type of psychosis. This means the person may not always be able to distinguish 
+            their own thoughts and ideas from reality. \n
+            - By NHS"
+
+  utter_Anger_Description:
+    - text: "We all feel angry at times – it's part of being human. Anger is a normal, healthy emotion, which we might  
+            experience if we feel: Attacked, Deceived, Frustrated, invalidated. \n 
+            - By Mind.org"
+
+  utter_Suicide:
+    - text: "Suicide is death caused by injuring oneself with the intent to die. A suicide attempt is when someone harms 
+            themselves with any intent to end their life, but they do not die as a result of their actions.1
+            Many factors can increase the risk for suicide or protect against it. Suicide is connected to other forms of 
+            injury and violence. For example, people who have experienced violence, including child abuse, bullying, or 
+            sexual violence have a higher suicide risk. Being connected to family and community support and having easy 
+            access to healthcare can decrease suicidal thoughts and behaviors. Samaritans Helpline 116 123\n 
+            - By CDC"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

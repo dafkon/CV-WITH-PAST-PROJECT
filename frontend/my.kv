@@ -52,6 +52,7 @@ WindowManager:
                 app.login(email.text, password.text)
                 email.text = ''
                 password.text = ''
+                app.root.get_screen('Homewindow').helpsection()
 
         RoundedButton:
             font_size: 12
@@ -217,16 +218,6 @@ WindowManager:
                     ScrollView:
                         MDList:
                             id: helpscreen
-                    Button:
-                        font_size: 20
-                        text: "Lets Chat!!!"
-                        background_color: 150/255.0, 100/255.0, 150/255.0, 255/255.0
-                        pos_hint: {"x":0.3, "y":0.5}
-                        size_hint: 0.4, 0.09
-                        on_release:
-                            app.root.get_screen('Homewindow').helpsection()
-                            self.opacity = 0
-                            self.disabled = True
 
             #2nd item
             MDBottomNavigationItem:
@@ -258,8 +249,8 @@ WindowManager:
                         pos_hint: {"x":0.3, "y":0.5}
                         size_hint: 0.4, 0.09
                         on_release:
-                            app.user_message("NickNameSet")
-                            listlist.add_widget(Label(text = app.message_response))
+                            app.user_message("hey")
+                            listlist.add_widget(Label(text = app.message_response, markup=True))
                             self.opacity = 0
                             self.disabled = True
                             user_input.disabled = False
@@ -289,8 +280,8 @@ WindowManager:
                         disabled: True
                         on_release:
                             app.user_message(user_input.text)
-                            listlist.add_widget(Label(text = app.message_user))
-                            listlist.add_widget(Label(text = app.message_response))
+                            listlist.add_widget(Label(text = app.message_user, markup=True, text_size=(360, None), font_size=15, padding=(20, 0), size=(self.texture_size)))
+                            listlist.add_widget(Label(text = app.message_response, markup=True, text_size=(360, None), font_size=15, padding=(20, 0), size=(500, 700)))
                             user_input.text = ''
 
 
@@ -323,6 +314,7 @@ WindowManager:
                                     letschat.disabled = False
                                     user_input.disabled = True
                                     submitinput.disabled = True
+                                    helpscreen.clear_widgets()
                                     app.signout()
 
 
@@ -330,13 +322,38 @@ WindowManager:
                                 id: delete
                                 text: "Delete Account"
                                 on_release:
-                                    app.deleteUser()
+                                    app.popupwindow_DeleteUser()
+                                    if letschat.disabled == True: listlist.clear_widgets()
+                                    letschat.opacity = 1
+                                    letschat.disabled = False
+                                    user_input.disabled = True
+                                    submitinput.disabled = True
+                                    app.message_history = ""
+
                             OneLineListItem:
                                 id: Clear_history
                                 text: "Clear Chat History"
                                 on_release:
+                                    app.Deletechats()
+                                    if letschat.disabled == True: listlist.clear_widgets()
+                                    letschat.opacity = 1
+                                    letschat.disabled = False
+                                    user_input.disabled = True
+                                    submitinput.disabled = True
                                     app.message_history = ""
 
+                            OneLineListItem:
+                                id: wipe_chats
+                                text: "Clear chat widgets"
+                                on_release:
+                                    if letschat.disabled == True: listlist.clear_widgets()
+
+                            OneLineListItem:
+                                id: past_convos
+                                text: "Show past conversations"
+                                on_release:
+                                    if letschat.disabled == True: listlist.clear_widgets()
+                                    if letschat.disabled == True: app.root.get_screen('Homewindow').historyloader()
 <RoundedButton@Button>
     background_color: (0,0,0,0)
     background_normal: ''

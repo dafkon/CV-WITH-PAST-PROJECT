@@ -1,0 +1,1291 @@
+version: "3.1"
+#=================================Conversation Speaking to the user personally===========================================
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+    - night night 
+    - cya tomorrow 
+    - cya 
+    - catch you later 
+    - later
+    - addios 
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+    - I'm sorry but no thank you
+    - That's not something I'm willing to do
+    - I'm not sure that's the right choice for me
+    - I can't say that I agree
+    - I don't see that happening
+    - That's just not my thing
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+- intent: thanks
+  examples: |
+    - Thanks
+    - Thank you
+    - Thank you very much
+    - Appreciate it
+    - Many thanks
+    - Thanks a lot
+
+- intent: joke
+  examples: |
+    - Tell me a joke
+    - Can you tell me a funny joke?
+    - Do you know any jokes?
+    - Make me laugh
+    - Say something funny
+    - Im feeling really down in the dumps could you make me laugh
+    - could really do with a pick me up
+    - joke
+    - tell me something funny
+    - I need cheered up 
+    - I want to laugh
+    - Got any dad jokes
+    - Need a good laugh
+    - A joke would cheer me up 
+    - Laughing always makes me feel better
+    - I like jokes 
+    - I love jokes
+    - I loves funny jokes
+
+- intent: default
+  examples: |
+    - I don't understand
+    - Can you rephrase that?
+    - What do you mean?
+    - Could you explain that?
+    - Sorry I don't get it
+    - Can you say that again?
+    - Pardon?
+    - I'm sorry I didn't understand that.
+
+- intent: Mental_Health_Update
+  examples: |
+    - Ive been really struggling this past while
+    - i always feels down
+    - constantly drained
+    - mentally fatigued
+    - I'm feeling overwhelmed lately
+    - My anxiety has been acting up
+    - I'm experiencing a lot of stress
+    - I'm struggling with my emotions
+    - I feel like I can't handle things right now
+    - finding it hard to focus and concentrate
+    - I'm feeling really anxious and worried
+    - I'm not sleeping well and it's affecting my mood
+    - feeling really low and sad
+    - I'm experiencing a lot of negative thoughts
+    - I'm feeling really burnt out
+    - having trouble coping with things
+    - I'm experiencing a lot of mood swings
+    - I feel like I'm on an emotional rollercoaster
+    - feeling really lonely and isolated
+    - I'm struggling to find motivation
+    - I'm feeling really irritable and snappy
+    - having trouble managing my stress levels
+    - I'm feeling really overwhelmed and helpless
+
+- intent: Cause
+  examples: |
+    - Family problems
+    - My physical and mental health
+    - I was in an abusive relationship
+    - I was abused when i was younger
+    - Being antisocial and afraid of connecting with people
+    - I'm going through a lot of changes in my life
+    - Ive experienced a traumatic event
+    - I'm dealing with a lot of stress at work/school
+    - Im feeling overwhelmed by responsibilities
+    - Trouble with a significant relationship
+    - Ive experienced a recent loss or bereavement
+    - Ive been struggling with addiction or substance abuse
+    - Im dealing with financial difficulties
+    - Experiencing discrimination or prejudice
+    - I'm feeling pressure to meet societal expectations
+    - I'm struggling with a chronic illness
+    - I've experienced a major life change like moving or divorce
+    - I'm dealing with a lot of unresolved emotions from my past
+    - Feeling a lot of pressure from my family or cultural background
+    - I'm experiencing identity issues or feeling like I don't fit in
+    - Struggling with self-esteem or body image issues
+    - I'm dealing with a lot of uncertainty or insecurity in my life
+    - I've been experiencing a lot of negative self-talk or criticism
+
+- intent: sought_Help
+  examples: |
+    - No i've not sought out any help for this
+    - This is the first time ive talked about this
+    - yea i have
+    - no i have not
+    - yes i have before
+    - never would
+    - I don't think I ever will
+    
+- intent: Reason_for_not_seeking_Help
+  examples: |
+    - Feeling weak that i have to ask someone or something for help
+    - Social expectations
+    - Not wanting anyone to worry
+    - Feeling ashamed that I can't handle this on my own
+    - Fear of being judged or misunderstood
+    - Worried about the cost of seeking professional help
+    - I don't know where to start looking for help
+    - I don't want to burden anyone with my problems
+    - I don't think anyone can help me with this
+    - Feeling like I should be able to deal with this myself
+    - Concerned about confidentiality or privacy
+    - Feeling like my problem isn't serious enough to seek help for
+    - I'm afraid of the potential consequences of seeking help
+    - I'm afraid of what people might think of me if I seek help
+    - I don't want to appear weak or vulnerable
+    - I've tried seeking help before and it didn't work out
+    - I'm not sure if what I'm going through is serious enough to seek help
+    - I'm worried about the time commitment involved in seeking help
+    - I feel like I should be able to handle this on my own
+    - I'm concerned about the stigma associated with mental health issues
+    - I don't have access to resources for seeking help
+    - I'm not sure if I can afford to seek help
+
+- intent: Why_They_Sought_help_Now
+  examples: |
+    - For me
+    - Perspective
+    - I feel more confident telling a bot than telling a person
+    - A chatbot is less likely to judge me
+    - I feel like i'll be listened to more
+    - The hope of finding a quicker solution faster
+    - I'm afraid of talking to an actual person
+    - I've tried dealing with this on my own for a while but it's not working
+    - I don't have anyone else to talk to about this
+    - I'm hoping to get a different perspective on my situation
+    - I'm tired of feeling stuck and want to make some progress
+    - I'm worried that things will get worse if I don't seek help now
+    - I'm open to trying different approaches to solve my problem
+    - I want to learn coping skills to better manage my situation
+    - I feel like I've hit a breaking point and can't handle this on my own anymore
+    - I'm ready to take action and make positive changes in my life
+    - I want to explore different treatment options to find what works for me
+
+- intent: Chatbot_expectation
+  examples: |
+    - I hope I can gain more confidence to go talk to a actual person
+    - To gain more knowledge on how to cope with my current situation
+    - To get this burden off my chest
+    - I'm looking for support and guidance to help me through a difficult time
+    - I hope to gain a better understanding of my thoughts and emotions
+    - I want to learn new coping strategies to help me deal with my situation
+    - I'm hoping to find a safe space to express myself without fear of judgment
+    - I'm looking for someone to listen to me and validate my feelings
+    - I'm hoping to build a connection with the chatbot and feel less alone
+    - I'm looking for resources and tools to help me manage my situation
+    - I hope to gain some clarity and perspective on my situation
+    - I want to build my confidence and self-esteem
+
+- intent: Self_harm_a
+  examples: |
+    - I want to kill myself
+    - I feel like hurting my self
+    - I want to commit suicide
+    - I want to cut myself
+    - I want to end it all
+    - I don't feel like living anymore
+    - I have committed self harm
+    - I want to die
+    - I dont feel like going on anymore
+    - This is the lowest I felt I don't feel like I can go on anymore
+    - I can't do this anymore I dont want to live
+    - Ive cut myself before
+    - Im thinking of hurting myself 
+    - I've hurt myself before on purpose
+    - I might hurt myself
+    - I think its best i should kill myself 
+    - I think I might kill myself
+    - I'm thinking about doing something bad
+    - I'm thinking about doing something bad to myself
+    - Suicide feels like the only way out
+    - Killing myself feels like the only way out
+    - I dont want to do this anymore
+    - I dont tink anyone will miss me if im gone
+    - Ive go no one to turn to im thinking of killing myself
+    - Everything is becoming too much I think its best if i just end it
+
+- intent: Self_harm_b
+  examples: |
+    - No i dont think that will help
+    - No that will not help
+    - No that wont work
+    - No i dont think you understand
+    - No that will not work
+    - You just dont understand
+    - No it will not
+    - Nothing will help
+    - I've been through this all before
+    - I dont see how any of that will help
+    - That's stupid none of that will help 
+    - I dont see how that will help
+    - Ive been recommend that before 
+    - Nope wont work with me 
+    - Nope that wouldn't help 
+    - never will work
+
+- intent: Self_harm_c
+  examples: |
+    - I dont want to trouble anyone
+    - I dont anyone to get worry anyone
+    - I dont want anyone getting caught up in this
+    - I dont want people to treat me differently
+    - People wont look at me the same
+    - I dont want my children to think i'm weak
+    - I dont want anyone to make fun of me
+    - What if people think differently of me
+    - What if those people reject me
+    - What if i get made fun of 
+    - For reason you just stated
+    - I dont have anyone to talk to
+    - I have no one to talk to
+
+- intent: Self_harm_d_1
+  examples: |
+    - Yes i will try that thank you
+    - Yes i will ive this a go thank you
+    - Thank you for helping me through this
+    - I appreciate your advice and I'll give it a try
+    - Thank you for taking the time to help me I'll definitely try that
+    - That sounds like a good idea I'll give it a shot
+    - I'm willing to try anything at this point so thank you for your suggestion
+    - Thank you for your support and guidance it means a lot
+    - I'm grateful for your help and I'll do my best to implement your advice
+    - I'll take your advice on board and see how it goes
+    - Thank you for being there for me I'll try my best to apply what you've taught me
+    - I'm willing to put in the effort and try what you've suggested
+    - Your guidance has been invaluable thank you so much
+    - Thank you soo much I'll follow up with the names you mentioned
+
+- intent: Self_harm_d_2
+  examples: |
+    - I still do not think this will help
+    - Sorry i dont think this will help
+    - I still feel the same about this 
+    - No sorry ive already thought about all of that
+    - I dont think i can do any of that
+    - No im still having a hard time thinking that would work
+    - I dont think that will work in my situation
+    - Personally i dont know if this is right for me
+    - I do not think something like this helps
+    - Given my situation no
+    - I appreciate the advice but I just dont think its the right fit for me
+    - I've tried similar things before and they haven't really made a difference
+    - I understand where you're coming from but I dont see how that will help me
+    - Im just feeling really hopeless right now so its hard to believe anything will make a difference
+    - I appreciate your concern but I don't think that will address the underlying issue
+    - I've thought about it a lot and I just don't think that's the solution for me
+    - I know people say that helps but I just can't see it working for me personally
+    - I wish I could be more optimistic but I'm just not convinced this will help
+    - I've been struggling with this for a while and nothing seems to make a dent
+    - Im open to ideas but I don't think that one will work in my specific circumstances
+
+- intent: Self_harm_e_1
+  examples: |
+    - Im not sure about this
+    - I dont know 
+    - ehhh
+    - ehh sure
+    - meh I'll try it
+    - could work 
+    - maybe
+    - sure
+    - I'm hesitant but I'll give it a chance
+    - not completely convinced but I'll consider it
+    - I'm open to the idea but not sure if it's right for me
+    - I'm willing to try it but I have my doubts
+    - Couldn't hurt trying it least
+    - not sure how I feel about this but I'm willing to hear more
+    - I'm not confident but it's worth a shot
+    - Probably will just give it a god anyway
+    - I'm skeptical but I will keep an open mind
+    - I'm worried but I'll try it 
+    - not totally sold but I'll give it a try
+    - might give it a go sure
+    - not 100% sure but I'm willing to explore the possibility
+    - I'm unsure but I'll try to keep an open attitude
+    - possibly
+
+- intent: Self_harm_e_2
+  examples: |
+    - yet again no these ideas arent bad they are just ones ive thought about before
+    - na cant do that
+    - sorry dont see that happening anytime soon 
+    - that wont be happening 
+    - Could but probably wont 
+    - No that just not something id be willing to do
+
+- intent: Coping_strategies_A
+  examples: |
+    - I have a hard time managing my mental health
+    - I struggle to find ways to deal with my mental health in public
+    - Its hard to find ways to cope with my mental health
+    - Do you have any advice on how to cope with mental health 
+    - How do i cope with my mental health
+    - What ways are there to deal with my mental health
+    - Do you have any steps in coping with mental health
+    - I'm looking for ways to manage my mental health on a daily basis
+    - I'm trying to find coping mechanisms that work for me
+    - It's difficult to balance my mental health with other aspects of my life
+    - I need help coming up with strategies to cope with my mental health challenges
+    - I feel overwhelmed and don't know how to handle my mental health issues
+    - I want to learn more about effective coping mechanisms for mental health
+    - I struggle to maintain my mental health while managing daily stressors
+    - I'm looking for advice on how to improve my mental health and wellbeing
+    - I'm trying to identify triggers and coping strategies for my mental health
+    - I'm looking for resources and tools to help me cope with my mental health
+    - How do I cope
+    - Need help with mental health
+    - Seeking coping mechanisms
+    - Looking for advice
+    - Daily mental health management
+    - Overwhelmed with mental health
+    - Need coping strategies
+    - Coping with stressors
+    - Identifying triggers
+#=================================Coping with mental health + Refrences===========================================
+- intent: Coping_strategies_B
+  examples: |
+    - coping Menu
+    - coping strategies menu 
+
+- intent: Coping_strategies_Depression
+  examples: |
+    - coping depression
+    - coping with depression
+
+- intent: Coping_strategies_Depression_REF
+  examples: |
+    - depression ref
+    - depression reference 
+
+- intent: Coping_strategies_C_Stress
+  examples: |
+    - coping stress
+    - coping with stress
+
+- intent: Coping_strategies_C_Stress_REF
+  examples: |
+    - stress ref
+    - stress reference
+
+- intent: Coping_strategies_C_Anxiety
+  examples: |
+    - coping Anxiety
+    - coping with Anxiety
+
+- intent: Coping_strategies_C_Anxiety_REF
+  examples: |
+    - Anxiety ref
+    - Anxiety reference
+
+- intent: Coping_strategies_C_Body_dysmorphic
+  examples: |
+    - coping body dysmorphic
+    - coping with body dysmorphic
+
+- intent: Coping_strategies_C_Body_dysmorphic_REF
+  examples: |
+    - body dysmorphic ref
+    - body dysmorphic reference
+
+- intent: Coping_strategies_C_PTSD
+  examples: |
+    - coping PTSD
+    - coping with PTSD
+    - coping with Post-Traumatic Stress Disorder
+    - coping Post-Traumatic Stress Disorder
+
+- intent: Coping_strategies_C_PTSD_REF
+  examples: |
+    - PTSD ref
+    - PTSD reference
+
+- intent: Coping_strategies_C_PTSD_flashbacks
+  examples: |
+    - coping PTSD flashbacks
+    - coping with PTSD flashbacks
+    - copingPost-Traumatic Stress Disorder flashbacks
+    - coping with Post-Traumatic Stress Disorder flashbacks
+
+- intent: Coping_strategies_C_PTSD_flashbacks_REF
+  examples: |
+    - PTSD flashbacks ref
+    - PTSD flashbacks reference
+    - Post-Traumatic Stress Disorder flashbacks ref
+    - Post-Traumatic Stress Disorder flashbacks reference
+    
+
+- intent: Coping_strategies_C_ADHD
+  examples: |
+    - coping ADHD
+    - coping with ADHD
+    - coping Attention-Deficit/Hyperactivity Disorder
+    - coping with Attention-Deficit/Hyperactivity Disorder
+
+- intent: Coping_strategies_C_ADHD_REF
+  examples: |
+    - ADHD ref
+    - ADHD reference 
+    - Attention-Deficit/Hyperactivity Disorder ref
+    - Attention-Deficit/Hyperactivity Disorder reference 
+
+- intent: Coping_strategies_C_OCD
+  examples: |
+    - coping OCD
+    - coping with OCD
+    - coping Obsessive-Compulsive Disorder
+    - coping with Obsessive-Compulsive Disorder
+
+- intent: Coping_strategies_C_OCD_REF
+  examples: |
+    - OCD ref
+    - OCD reference
+    - Obsessive-Compulsive Disorder ref
+    - Obsessive-Compulsive Disorder reference
+
+- intent: Coping_strategies_C_Eating_Disorder
+  examples: |
+    - coping eating disorder
+    - coping with eating disorder
+    - coping eating problems
+    - coping eating too much 
+    - coping eating too little 
+    - strategies for coping with an eating disorder
+    - how to deal with disordered eating
+    - self-help techniques for eating disorders
+    - ways to manage binge eating
+    - how to overcome emotional eating
+    - eating disorder recovery tools
+    - natural remedies for disordered eating
+    - ways to cope with food addiction
+    - healthy coping mechanisms for food issues
+    - strategies for mindful eating.
+
+- intent: Coping_strategies_C_Eating_Disorder_REF
+  examples: |
+    - eating disorder ref
+    - eating disorder reference
+
+- intent: Coping_strategies_C_Insomnia
+  examples: |
+    - coping Insomnia
+    - coping with Insomnia
+    - coping tools for sleep problems
+    - how to cope with insomnia
+    - tips for dealing with insomnia
+    - insomnia self-help strategies
+    - ways to manage insomnia
+    - coping mechanisms for sleeplessness
+    - strategies for sleeping better
+    - how to relieve insomnia
+    - insomnia management techniques
+    - sleep hygiene tips
+    - coping tools for sleep problems
+    - natural remedies for insomnia
+    - relaxation techniques for sleep
+
+- intent: Coping_strategies_C_Insomnia_REF
+  examples: |
+    - Insomnia ref
+    - Insomnia reference 
+
+- intent: Coping_strategies_C_Angerc
+  examples: |
+    - coping Anger
+    - coping with anger
+
+- intent: Coping_strategies_C_Anger_REF
+  examples: |
+    - Anger ref
+    - Anger reference 
+
+- intent: Coping_strategies_C_Grief
+  examples: |
+    - coping Grief
+    - coping with grief
+
+- intent: Coping_strategies_C_Grief_REF
+  examples: |
+    - Grief ref
+    - Grief reference
+
+- intent: Coping_strategies_C_Antisocial
+  examples: |
+    - coping Antisocial
+    - coping with Antisocial
+
+- intent: Coping_strategies_C_Antisocial_REF
+  examples: |
+    - Antisocial ref
+    - Antisocial reference
+
+- intent: Coping_strategies_C_Trauma
+  examples: |
+    - coping Trauma
+    - coping with Trauma
+
+- intent: Coping_strategies_C_Trauma_REF
+  examples: |
+    - Trauma ref
+    - Trauma reference
+
+- intent: Coping_strategies_C_Abusive_relationship_Current
+  examples: |
+    - coping Abusive relationship current
+    - coping Abusive relationship currently
+    - coping with Abusive relationship currently
+    - coping with a Abusive relationship currently
+    - coping with an Abusive relationship currently
+
+- intent: Coping_strategies_C_Abusive_relationship_Current_REF
+  examples: |
+    - Abusive relationship currently ref
+    - Abusive relationship currently reference
+
+- intent: Coping_strategies_C_Abusive_relationship_Planning
+  examples: |
+    - coping Abusive relationship Planning
+    - coping with Abusive relationship Planning
+    - coping with a Abusive relationship Planning
+    - coping with an Abusive relationship Planning
+    - coping Abusive relationship Planning to leave
+    - coping with Abusive relationship Planning to leave
+    - coping with a Abusive relationship Planning to leave
+    - coping with an Abusive relationship Planning to leave
+
+- intent: Coping_strategies_C_Abusive_relationship_Planning_REF
+  examples: |
+    - Abusive relationship Planning ref
+    - Abusive relationship Planning reference 
+
+- intent: Coping_strategies_C_Abusive_relationship_Left
+  examples: |
+    - coping Abusive relationship Left
+    - coping with Abusive relationship Left
+    - coping with a Abusive relationship Left
+    - coping with an Abusive relationship Left
+    - coping Abusive relationship i just Lefted 
+    - coping with Abusive relationship i just Lefted 
+    - coping with a Abusive relationship i just Lefted 
+    - coping with an Abusive relationship i just Lefted 
+    - coping with Abusive relationship im just after leaving
+    - coping with a Abusive relationship im just after leaving
+    - coping with an Abusive relationship im just after leaving
+
+- intent: Coping_strategies_C_Abusive_relationship_Left_REF
+  examples: |
+    - Abusive relationship Left ref
+    - Abusive relationship Left reference
+
+- intent: Coping_strategies_C_Phobias_Menu
+  examples: |
+    - Phobias Menu
+    - Menu phobia
+    - menu to display list of phobias 
+    - display phobias 
+
+- intent: Coping_strategies_C_Phobias
+  examples: |
+    - coping general phobias
+    - coping general phobia
+    - coping with general phobias
+    - coping with general phobia
+    - how to deal with general phobias
+
+- intent: Coping_strategies_C_Phobias_REF
+  examples: |
+    - General phobia ref
+    - general phobia reference 
+
+- intent: Coping_strategies_C_Phobias_1
+  examples: |
+    - coping claustrophobia
+    - coping with claustrophobia
+
+- intent: Coping_strategies_C_Phobias_1_REF
+  examples: |
+    - claustrophobia ref
+    - claustrophobia reference
+
+- intent: Coping_strategies_C_Phobias_2
+  examples: |
+    - coping Mysophobia
+    - coping with Mysophobia
+
+- intent: Coping_strategies_C_Phobias_2_REF
+  examples: |
+    - Mysophobia ref
+    - Mysophobia reference
+
+- intent: Coping_strategies_C_Phobias_3
+  examples: |
+    - coping Hypochondria
+    - coping with Hypochondria
+
+- intent: Coping_strategies_C_Phobias_3_REF
+  examples: |
+    - Hypochondria ref
+    - Hypochondria reference 
+
+- intent: Coping_strategies_C_Phobias_4
+  examples: |
+    - coping Atychiphobia
+    - coping with Atychiphobia
+
+- intent: Coping_strategies_C_Phobias_4_REF
+  examples: |
+    - Atychiphobia ref
+    - Atychiphobia reference
+
+- intent: Coping_strategies_C_Phobias_5
+  examples: |
+    - coping Tokophobia 
+    - coping with Tokophobia 
+
+- intent: Coping_strategies_C_Phobias_5_REF
+  examples: |
+    - Tokophobia ref
+    - Tokophobia reference
+
+- intent: Coping_strategies_C_Addiction
+  examples: |
+    - coping Addiction
+    - coping with Addiction
+    - coping with a Addiction
+    - coping with an Addiction
+
+- intent: Coping_strategies_C_Addiction_REF
+  examples: |
+    - Addiction ref
+    - Addiction reference
+
+- intent: Coping_strategies_C_Racism
+  examples: |
+    - coping Racism
+    - coping with racism
+
+- intent: Coping_strategies_C_Racism_REF
+  examples: |
+    - Racism ref
+    - Racism reference
+
+- intent: Coping_strategies_C_Homophobia
+  examples: |
+    - coping Homophobia
+    - coping with Homophobia
+
+- intent: Coping_strategies_C_Homophobia_REF
+  examples: |
+    - Homophobia ref
+    - Homophobia reference
+#=================================Asking what certain mental health condition mean===========================================
+- intent: Depression_Description
+  examples: |
+    - what is depression
+    - what is depression defined as
+    - Define depression
+    - Can you explain what depression means?
+    - How would you define depression?
+    - I'm not exactly sure what depression is, can you clarify?
+    - Can you give me a brief explanation of depression?
+    - What does the term "depression" mean?
+    - Can you describe depression in simple terms?
+    - Can you explain depression in layman's terms?
+    - How would you describe depression in a way that's easy to understand?
+    - I'm looking for a simple explanation of depression, could you help?
+    - Can you break down what depression is in a way that's not too complex?
+    - What's the easiest way to understand what depression is?
+    - Can you describe depression in simple, straightforward language?
+
+- intent: Anxiety_Description
+  examples: |
+    - what is Anxiety?
+    - what is Anxiety defined as
+    - Define Anxiety
+    - Can you explain what Anxiety means?
+    - How would you define Anxiety?
+    - I'm not exactly sure what Anxiety is, can you clarify?
+    - Can you give me a brief explanation of Anxiety?
+    - What does the term "Anxiety" mean?
+    - Can you describe Anxiety in simple terms?
+    - Can you explain Anxiety in layman's terms?
+    - How would you describe Anxiety in a way that's easy to understand?
+    - I'm looking for a simple explanation of Anxiety, could you help?
+    - Can you break down what Anxiety is in a way that's not too complex?
+    - What's the easiest way to understand what Anxiety is?
+    - Can you describe Anxiety in simple, straightforward language?
+
+- intent: Social_anxiety_disorder
+  examples: |
+    - what is Social anxiety disorder?
+    - what is Social anxiety disorder defined as
+    - Define Social anxiety disorder
+    - Can you explain what Social anxiety disorder means?
+    - How would you define Social anxiety disorder?
+    - I'm not exactly sure what Social anxiety disorder is, can you clarify?
+    - Can you give me a brief explanation of Social anxiety disorder?
+    - What does the term "Social anxiety disorder" mean?
+    - Can you describe Social anxiety disorder in simple terms?
+    - Can you explain Social anxiety disorder in layman's terms?
+    - How would you describe Social anxiety disorder in a way that's easy to understand?
+    - I'm looking for a simple explanation of Social anxiety disorder, could you help?
+    - Can you break down what Social anxiety disorder is in a way that's not too complex?
+    - What's the easiest way to understand what Social anxiety disorder is?
+    - Can you describe Social anxiety disorder in simple, straightforward language?
+
+- intent: Mood_Swings
+  examples: |
+    - what is Mood Swings?
+    - what is Mood Swings defined as
+    - Define Mood Swings
+    - Can you explain what Mood Swings means?
+    - How would you define Mood Swings?
+    - I'm not exactly sure what Mood Swings is, can you clarify?
+    - Can you give me a brief explanation of Mood Swings?
+    - What does the term "Mood Swings" mean?
+    - Can you describe Mood Swings in simple terms?
+    - Can you explain Mood Swings in layman's terms?
+    - How would you describe Mood Swings in a way that's easy to understand?
+    - I'm looking for a simple explanation of Mood Swings, could you help?
+    - Can you break down what Mood Swings is in a way that's not too complex?
+    - What's the easiest way to understand what Mood Swings is?
+    - Can you describe Mood Swings in simple, straightforward language?
+
+- intent: Body_dysmorphic_disorder
+  examples: |
+    - what is Body dysmorphic disorder?
+    - what is Body dysmorphic disorder defined as
+    - Define Body dysmorphic disorder
+    - Can you explain what Body dysmorphic disorder means?
+    - How would you define Body dysmorphic disorder?
+    - I'm not exactly sure what Body dysmorphic disorder is, can you clarify?
+    - Can you give me a brief explanation of Body dysmorphic disorder?
+    - What does the term "Body dysmorphic disorder" mean?
+    - Can you describe Body dysmorphic disorder in simple terms?
+    - Can you explain Body dysmorphic disorder in layman's terms?
+    - How would you describe Body dysmorphic disorder in a way that's easy to understand?
+    - I'm looking for a simple explanation of Body dysmorphic disorder, could you help?
+    - Can you break down what Body dysmorphic disorder is in a way that's not too complex?
+    - What's the easiest way to understand what Body dysmorphic disorder is?
+    - Can you describe Body dysmorphic disorder in simple, straightforward language?
+
+- intent: PTSD
+  examples: |
+    - what is PTSD?
+    - what is PTSD defined as
+    - Define PTSD
+    - Can you explain what PTSD means?
+    - How would you define PTSD?
+    - I'm not exactly sure what PTSD is, can you clarify?
+    - Can you give me a brief explanation of PTSD?
+    - What does the term "PTSD" mean?
+    - Can you describe PTSD in simple terms?
+    - Can you explain PTSD in layman's terms?
+    - How would you describe PTSD in a way that's easy to understand?
+    - I'm looking for a simple explanation of PTSD, could you help?
+    - Can you break down what PTSD is in a way that's not too complex?
+    - What's the easiest way to understand what PTSD is?
+    - Can you describe PTSD in simple, straightforward language?
+
+- intent: OCD
+  examples: |
+    - what is OCD?
+    - what is OCD defined as
+    - Define OCD
+    - Can you explain what OCD means?
+    - How would you define OCD?
+    - I'm not exactly sure what OCD is, can you clarify?
+    - Can you give me a brief explanation of OCD?
+    - What does the term "OCD" mean?
+    - Can you describe OCD in simple terms?
+    - Can you explain OCD in layman's terms?
+    - How would you describe OCD in a way that's easy to understand?
+    - I'm looking for a simple explanation of OCD, could you help?
+    - Can you break down what OCD is in a way that's not too complex?
+    - What's the easiest way to understand what OCD is?
+    - Can you describe OCD in simple, straightforward language?
+
+- intent: ADHD
+  examples: |
+    - what is ADHD?
+    - what is ADHD defined as
+    - Define ADHD
+    - Can you explain what ADHD means?
+    - How would you define ADHD?
+    - I'm not exactly sure what ADHD is, can you clarify?
+    - Can you give me a brief explanation of ADHD?
+    - What does the term "ADHD" mean?
+    - Can you describe ADHD in simple terms?
+    - Can you explain ADHD in layman's terms?
+    - How would you describe ADHD in a way that's easy to understand?
+    - I'm looking for a simple explanation of ADHD, could you help?
+    - Can you break down what ADHD is in a way that's not too complex?
+    - What's the easiest way to understand what ADHD is?
+    - Can you describe ADHD in simple, straightforward language?
+
+- intent: BPD
+  examples: |
+    - what is BPD?
+    - what is BPD defined as
+    - Define BPD
+    - Can you explain what BPD means?
+    - How would you define BPD?
+    - I'm not exactly sure what BPD is, can you clarify?
+    - Can you give me a brief explanation of BPD?
+    - What does the term "BPD" mean?
+    - Can you describe BPD in simple terms?
+    - Can you explain BPD in layman's terms?
+    - How would you describe BPD in a way that's easy to understand?
+    - I'm looking for a simple explanation of BPD, could you help?
+    - Can you break down what BPD is in a way that's not too complex?
+    - What's the easiest way to understand what BPD is?
+    - Can you describe BPD in simple, straightforward language?
+
+- intent: Eating_disorders
+  examples: |
+    - what is Eating disorders?
+    - what is Eating disorders defined as
+    - Define Eating disorders
+    - Can you explain what Eating disorders means?
+    - How would you define Eating disorders?
+    - I'm not exactly sure what Eating disorders is, can you clarify?
+    - Can you give me a brief explanation of Eating disorders?
+    - What does the term "Eating disorder" mean?
+    - Can you describe Eating disorders in simple terms?
+    - Can you explain Eating disorders in layman's terms?
+    - How would you describe Eating disorders in a way that's easy to understand?
+    - I'm looking for a simple explanation of Eating disorders, could you help?
+    - Can you break down what Eating disorders is in a way that's not too complex?
+    - What's the easiest way to understand what Eating disorders is?
+    - Can you describe Eating disorders in simple, straightforward language?
+
+- intent: Generalized_anxiety_disorder
+  examples: |
+    - what is Generalized anxiety disorder?
+    - what is Generalized anxiety disorder defined as
+    - Define Generalized anxiety disorder
+    - Can you explain what Generalized anxiety disorder means?
+    - How would you define Generalized anxiety disorder?
+    - I'm not exactly sure what Generalized anxiety disorder is, can you clarify?
+    - Can you give me a brief explanation of Generalized anxiety disorder?
+    - What does the term "Generalized anxiety disorder" mean?
+    - Can you describe Generalized anxiety disorder in simple terms?
+    - Can you explain Generalized anxiety disorder in layman's terms?
+    - How would you describe Generalized anxiety disorder in a way that's easy to understand?
+    - I'm looking for a simple explanation of Generalized anxiety disorder, could you help?
+    - Can you break down what Generalized anxiety disorder is in a way that's not too complex?
+    - What's the easiest way to understand what Generalized anxiety disorder is?
+    - Can you describe Generalized anxiety disorder in simple, straightforward language?
+
+- intent: addiction
+  examples: |
+    - what is addiction?
+    - what is addiction defined as
+    - Define addiction
+    - Can you explain what addiction means?
+    - How would you define addiction?
+    - I'm not exactly sure what addiction is, can you clarify?
+    - Can you give me a brief explanation of addiction?
+    - What does the term "addiction" mean?
+    - Can you describe addiction in simple terms?
+    - Can you explain addiction in layman's terms?
+    - How would you describe addiction in a way that's easy to understand?
+    - I'm looking for a simple explanation of addiction, could you help?
+    - Can you break down what addiction is in a way that's not too complex?
+    - What's the easiest way to understand what addiction is?
+    - Can you describe addiction in simple, straightforward language?
+
+- intent: Panic_disorder
+  examples: |
+    - what is Panic_disorder?
+    - what is Panic_disorder defined as
+    - Define Panic_disorder
+    - Can you explain what Panic_disorder means?
+    - How would you define Panic_disorder?
+    - I'm not exactly sure what Panic_disorder is, can you clarify?
+    - Can you give me a brief explanation of Panic_disorder?
+    - What does the term "Panic_disorder" mean?
+    - Can you describe Panic_disorder in simple terms?
+    - Can you explain Panic_disorder in layman's terms?
+    - How would you describe Panic_disorder in a way that's easy to understand?
+    - I'm looking for a simple explanation of Panic_disorder, could you help?
+    - Can you break down what Panic_disorder is in a way that's not too complex?
+    - What's the easiest way to understand what Panic_disorder is?
+    - Can you describe Panic_disorder in simple, straightforward language?
+
+- intent: Seasonal_affective_disorder
+  examples: |
+    - what is Seasonal affective disorder?
+    - what is Seasonal affective disorder defined as
+    - Define Seasonal affective disorder
+    - Can you explain what Seasonal affective disorder means?
+    - How would you define Seasonal affective disorder?
+    - I'm not exactly sure what Seasonal affective disorder is, can you clarify?
+    - Can you give me a brief explanation of Seasonal affective disorder?
+    - What does the term "Seasonal affective disorder" mean?
+    - Can you describe Seasonal affective disorder in simple terms?
+    - Can you explain Seasonal affective disorder in layman's terms?
+    - How would you describe Seasonal affective disorder in a way that's easy to understand?
+    - I'm looking for a simple explanation of Seasonal affective disorder, could you help?
+    - Can you break down what Seasonal affective disorder is in a way that's not too complex?
+    - What's the easiest way to understand what Seasonal affective disorder is?
+    - Can you describe Seasonal affective disorder in simple, straightforward language?
+
+- intent: Abusive_relationship
+  examples: |
+    - what is Abusive relationship?
+    - what is Abusive relationship defined as
+    - Define Abusive relationship
+    - Can you explain what Abusive relationship means?
+    - How would you define Abusive relationship?
+    - I'm not exactly sure what Abusive relationship is, can you clarify?
+    - Can you give me a brief explanation of Abusive relationship?
+    - What does the term "Abusive relationship" mean?
+    - Can you describe Abusive relationship in simple terms?
+    - Can you explain Abusive relationship in layman's terms?
+    - How would you describe Abusive relationship in a way that's easy to understand?
+    - I'm looking for a simple explanation of Abusive relationship, could you help?
+    - Can you break down what Abusive relationship is in a way that's not too complex?
+    - What's the easiest way to understand what Abusive relationship is?
+    - Can you describe Abusive relationship in simple, straightforward language?
+
+
+- intent: Family_problems
+  examples: |
+    - Do you have a definition for family problems
+    - Do all family's have have fights?
+    - How are family problems described
+    - How would you define family problems?
+    - Define family problems 
+    - Can you describe family problems in simple terms?
+    - Can you give me a brief family problems affective disorder?
+    - Describe family problems?
+    - What is a general description of family problems?
+    - In simple terms what are family problems?
+    - In laymen terms what is family problems?
+    - How would you describe family problems?
+    - Are family problems normal
+
+- intent: Stress_Description
+  examples: |
+    - what is Stress?
+    - what is Stress defined as
+    - Define Stress
+    - Can you explain what Stress means?
+    - How would you define Stress?
+    - I'm not exactly sure what Stress is, can you clarify?
+    - Can you give me a brief explanation of Stress?
+    - What does the term "Stress" mean?
+    - Can you describe Stress in simple terms?
+    - Can you explain Stress in layman's terms?
+    - How would you describe Stress in a way that's easy to understand?
+    - I'm looking for a simple explanation of Stress, could you help?
+    - Can you break down what Stress is in a way that's not too complex?
+    - What's the easiest way to understand what Stress is?
+    - Can you describe Stress in simple, straightforward language?
+
+- intent: Grief
+  examples: |
+    - what is Grief?
+    - what is Grief defined as
+    - Define Grief
+    - Can you explain what Grief means?
+    - How would you define Grief?
+    - I'm not exactly sure what Grief is, can you clarify?
+    - Can you give me a brief explanation of Grief?
+    - What does the term "Grief" mean?
+    - Can you describe Grief in simple terms?
+    - Can you explain Grief in layman's terms?
+    - How would you describe Grief in a way that's easy to understand?
+    - I'm looking for a simple explanation of Grief, could you help?
+    - Can you break down what Grief is in a way that's not too complex?
+    - What's the easiest way to understand what Grief is?
+    - Can you describe Grief in simple, straightforward language?
+
+- intent: Insomnia
+  examples: |
+    - what is Insomnia?
+    - what is Insomnia defined as
+    - Define Insomnia
+    - Can you explain what Insomnia means?
+    - How would you define Insomnia?
+    - I'm not exactly sure what Insomnia is, can you clarify?
+    - Can you give me a brief explanation of Insomnia?
+    - What does the term "Insomnia" mean?
+    - Can you describe Insomnia in simple terms?
+    - Can you explain Insomnia in layman's terms?
+    - How would you describe Insomnia in a way that's easy to understand?
+    - I'm looking for a simple explanation of Insomnia, could you help?
+    - Can you break down what Insomnia is in a way that's not too complex?
+    - What's the easiest way to understand what Insomnia is?
+    - Can you describe Insomnia in simple, straightforward language?
+
+- intent: Phobias
+  examples: |
+    - what is Phobias?
+    - what is Phobias defined as
+    - Define Phobias
+    - Can you explain what Phobias means?
+    - How would you define Phobias?
+    - I'm not exactly sure what Phobias is, can you clarify?
+    - Can you give me a brief explanation of Phobias?
+    - What does the term "Phobias" mean?
+    - Can you describe Phobias in simple terms?
+    - Can you explain Phobias in layman's terms?
+    - How would you describe Phobias in a way that's easy to understand?
+    - I'm looking for a simple explanation of Phobias, could you help?
+    - Can you break down what Phobias is in a way that's not too complex?
+    - What's the easiest way to understand what Phobias is?
+    - Can you describe Phobias in simple, straightforward language?
+
+- intent: Anger_Description
+  examples: |
+    - what is Anger?
+    - what is Anger defined as
+    - Define Anger
+    - Can you explain what Anger means?
+    - How would you define Anger?
+    - I'm not exactly sure what Anger is, can you clarify?
+    - Can you give me a brief explanation of Anger?
+    - What does the term "Anger" mean?
+    - Can you describe Anger in simple terms?
+    - Can you explain Anger in layman's terms?
+    - How would you describe Anger in a way that's easy to understand?
+    - I'm looking for a simple explanation of Anger, could you help?
+    - Can you break down what Anger is in a way that's not too complex?
+    - What's the easiest way to understand what Anger is?
+    - Can you describe Anger in simple, straightforward language?
+
+- intent: Trauma_Description
+  examples: |
+    - what is Trauma?
+    - what is Trauma defined as
+    - Define Trauma
+    - Can you explain what Trauma means?
+    - How would you define Trauma?
+    - I'm not exactly sure what Trauma is, can you clarify?
+    - Can you give me a brief explanation of Trauma?
+    - What does the term "Trauma" mean?
+    - Can you describe Trauma in simple terms?
+    - Can you explain Trauma in layman's terms?
+    - How would you describe Trauma in a way that's easy to understand?
+    - I'm looking for a simple explanation of Trauma, could you help?
+    - Can you break down what Trauma is in a way that's not too complex?
+    - What's the easiest way to understand what Trauma is?
+    - Can you describe Trauma in simple, straightforward language?
+
+- intent: Tokophobia
+  examples: |
+    - what is Tokophobia?
+    - what is Tokophobia defined as
+    - Define Tokophobia
+    - Can you explain what Tokophobia means?
+    - How would you define Tokophobia?
+    - I'm not exactly sure what Tokophobia is, can you clarify?
+    - Can you give me a brief explanation of Tokophobia?
+    - What does the term "Tokophobia" mean?
+    - Can you describe Tokophobia in simple terms?
+    - Can you explain Tokophobia in layman's terms?
+    - How would you describe Tokophobia in a way that's easy to understand?
+    - I'm looking for a simple explanation of Tokophobia, could you help?
+    - Can you break down what Tokophobia is in a way that's not too complex?
+    - What's the easiest way to understand what Tokophobia is?
+    - Can you describe Tokophobia in simple, straightforward language?
+
+- intent: Claustrophobia
+  examples: |
+    - what is Claustrophobia?
+    - what is Claustrophobia defined as
+    - Define Claustrophobia
+    - Can you explain what Claustrophobia means?
+    - How would you define Claustrophobia?
+    - I'm not exactly sure what Claustrophobia is, can you clarify?
+    - Can you give me a brief explanation of Claustrophobia?
+    - What does the term "Claustrophobia" mean?
+    - Can you describe Claustrophobia in simple terms?
+    - Can you explain Claustrophobia in layman's terms?
+    - How would you describe Claustrophobia in a way that's easy to understand?
+    - I'm looking for a simple explanation of Claustrophobia, could you help?
+    - Can you break down what Claustrophobia is in a way that's not too complex?
+    - What's the easiest way to understand what Claustrophobia is?
+    - Can you describe Claustrophobia in simple, straightforward language?
+
+- intent: Mysophobia
+  examples: |
+    - what is Mysophobia?
+    - what is Mysophobia defined as
+    - Define Mysophobia
+    - Can you explain what Mysophobia means?
+    - How would you define Mysophobia?
+    - I'm not exactly sure what Mysophobia is, can you clarify?
+    - Can you give me a brief explanation of Mysophobia?
+    - What does the term "Mysophobia" mean?
+    - Can you describe Mysophobia in simple terms?
+    - Can you explain Mysophobia in layman's terms?
+    - How would you describe Mysophobia in a way that's easy to understand?
+    - I'm looking for a simple explanation of Mysophobia, could you help?
+    - Can you break down what Mysophobia is in a way that's not too complex?
+    - What's the easiest way to understand what Mysophobia is?
+    - Can you describe Mysophobia in simple, straightforward language?
+
+- intent: Hypochondria
+  examples: |
+    - what is Hypochondria?
+    - what is Hypochondria defined as
+    - Define Hypochondria
+    - Can you explain what Hypochondria means?
+    - How would you define Hypochondria?
+    - I'm not exactly sure what Hypochondria is, can you clarify?
+    - Can you give me a brief explanation of Hypochondria?
+    - What does the term "Hypochondria" mean?
+    - Can you describe Hypochondria in simple terms?
+    - Can you explain Hypochondria in layman's terms?
+    - How would you describe Hypochondria in a way that's easy to understand?
+    - I'm looking for a simple explanation of Hypochondria, could you help?
+    - Can you break down what Hypochondria is in a way that's not too complex?
+    - What's the easiest way to understand what Hypochondria is?
+    - Can you describe Hypochondria in simple, straightforward language?
+
+- intent: Atychiphobia
+  examples: |
+    - what is Atychiphobia?
+    - what is Atychiphobia defined as
+    - Define Atychiphobia
+    - Can you explain what Atychiphobia means?
+    - How would you define Atychiphobia?
+    - I'm not exactly sure what Atychiphobia is, can you clarify?
+    - Can you give me a brief explanation of Atychiphobia?
+    - What does the term "Atychiphobia" mean?
+    - Can you describe Atychiphobia in simple terms?
+    - Can you explain Atychiphobia in layman's terms?
+    - How would you describe Atychiphobia in a way that's easy to understand?
+    - I'm looking for a simple explanation of Atychiphobia, could you help?
+    - Can you break down what Atychiphobia is in a way that's not too complex?
+    - What's the easiest way to understand what Atychiphobia is?
+    - Can you describe Atychiphobia in simple, straightforward language?
+
+- intent: Bipolar_Disorder
+  examples: |
+    - what is Bipolar Disorder?
+    - what is Bipolar Disorder defined as
+    - Define Bipolar Disorder
+    - Can you explain what Bipolar Disorder means?
+    - How would you define Bipolar Disorder?
+    - I'm not exactly sure what Bipolar Disorder is, can you clarify?
+    - Can you give me a brief explanation of Bipolar Disorder?
+    - What does the term "Bipolar Disorder" mean?
+    - Can you describe Bipolar Disorder in simple terms?
+    - Can you explain Bipolar Disorder in layman's terms?
+    - How would you describe Bipolar Disorder in a way that's easy to understand?
+    - I'm looking for a simple explanation of Bipolar Disorder, could you help?
+    - Can you break down what Bipolar Disorder is in a way that's not too complex?
+    - What's the easiest way to understand what Bipolar Disorder is?
+    - Can you describe Bipolar Disorder in simple, straightforward language?
+
+- intent: Schizophrenia
+  examples: |
+    - what is Schizophrenia?
+    - what is Schizophrenia defined as
+    - Define Schizophrenia
+    - Can you explain what Schizophrenia means?
+    - How would you define Schizophrenia?
+    - I'm not exactly sure what Schizophrenia is, can you clarify?
+    - Can you give me a brief explanation of Schizophrenia?
+    - What does the term "Schizophrenia" mean?
+    - Can you describe Schizophrenia in simple terms?
+    - Can you explain Schizophrenia in layman's terms?
+    - How would you describe Schizophrenia in a way that's easy to understand?
+    - I'm looking for a simple explanation of Schizophrenia, could you help?
+    - Can you break down what Schizophrenia is in a way that's not too complex?
+    - What's the easiest way to understand what Schizophrenia is?
+    - Can you describe Schizophrenia in simple, straightforward language?
+
+- intent: Suicide
+  examples: |
+    - what is Suicide?
+    - what is Suicide defined as
+    - Define Suicide
+    - Can you explain what Suicide means?
+    - How would you define Suicide?
+    - I'm not exactly sure what Suicide is, can you clarify?
+    - Can you give me a brief explanation of Suicide?
+    - What does the term "Suicide" mean?
+    - Can you describe Suicide in simple terms?
+    - Can you explain Suicide in layman's terms?
+    - How would you describe Suicide in a way that's easy to understand?
+    - I'm looking for a simple explanation of Suicide, could you help?
+    - Can you break down what Suicide is in a way that's not too complex?
+    - What's the easiest way to understand what Suicide is?
+    - Can you describe Suicide in simple, straightforward language?
